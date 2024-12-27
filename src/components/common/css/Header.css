@@ -67,11 +67,10 @@
   font-size: 15px;
 }
 .nav_item:hover li {
-  display: block; /* 호버 시 드롭다운 보이기 */
+  display: block;
 }
 .nav_item li {
   transition: opacity 0.3s ease-in-out; 
-  display: none;
   margin-top: 5px;
   padding: 10px;
   z-index: 1003;
@@ -118,117 +117,100 @@
 .nav_item li a:hover {
   color: #fff;
 }
-/* 반응형css */
- @media (max-width: 600px) {
 
+/* 반응형 스타일 */
+
+@media (max-width: 600px) {
   #header {
     display: flex;
-    justify-content: space-between; 
-    height: 80px;
-  }
-  h1.header_title{
-    width: 250px;
-    padding: 0 15px;
-  }
-  .header_item_menu {
-  
-  width: 200px;
-  padding: 10px 0 0 ;
-  justify-content: center;
-  text-align: center;
-  height: 50px;
-}
-
- }
-  /*#header {
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center ;   
-    height: auto; 
-    display: flex;
-    position: relative;
-  }
-
-  h1.header_title{
-    width: 200px; 
-    height: 150px;
-    border-radius: 20px;
-    border: 1px solid #000;
-    text-align: center ;
-    margin-top: 50px ; 
-  }
-  .header_title>h1{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-  .header_title>h1:hover{
-    font-size: 30px;
- 
-  } */
-
-  /* .header_menu_navbar, 
-  .header_item_menu {
-    width: 100%; 
-    align-items: center;
-    transform: translateY(-3px); 
-    box-shadow: 0 36px 36px 0 rgba(90, 90, 90, 0.2);
-    border-radius: 20px;
-  }
-  .header_menu_navbar {
+   justify-content: space-between;
     flex-direction: column;
+    align-items: center;
   }
-  .header_item_menu {
-    justify-content: center;
+  /* .header_title{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #77c1fd;
+  } */
+  .header_title a {
+    left: 38%;
+    position: absolute;
+    /* border: 1px solid #e91c1c; */
   }
-  .header_item_menu a{
-    margin-left: 40px;
-  } */
-
-  /* li 우측 드롭다운 설정 */
-   /* .nav_item {
-    display: none; 
-  } */
-  /*.nav_item li {
-    position: absolute;  
-    top: 5%;
-    left: 100%;
-    transform: translateX(5%);
-    transition: opacity 0.3s ease-in-out;
+  #header:hover {
+    height: 350px; /* 호버 시 헤더 높이 확장 */
+  }
+  
+  .header_menu_navbar {
+    position: relative;
+    top: 12px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+  }
+  .header_menu_navbar:hover {
+    margin-top: 0;  
+  }
+  .nav_item {
+    width: 150px;
+    margin: 10 30px;
+    padding: 0; /* 꼭 줘야 반응형에서 사이즈 변화가 없다 */
+    position: relative; /* ul의 위치 고정 */
+    text-align: center;
+    z-index: 1;
+    /* border: 1px solid #fdfb79; */
+  }
+  .nav_item ul {/* 추가 */
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    padding: 0;
+  }
+  .nav_item li {
+    position:relative;
+    margin-top:-20px;
+    padding: 0;
+    height: auto;
     display: none;
+    z-index: 1003;
+    /* border: 1px solid #79fd9a; */
+  }
+
+  .nav_item:hover li {
+    display: block; /* 호버 시 모두 표시 */
+    position: relative;
+    transform: translateX(15px);
     z-index: 100;
-    left: 100%;
-    color: #fff;
-    text-align: left; 
-    pointer-events: none;
-    opacity: 0; 
   }
   .nav_item:hover li,
-  .nav_item li:hover {
-   opacity: 1; 
-   pointer-events: auto;
-  }
-  
-  /* 드롭다운 메뉴 스타일 */
-  /* .nav_item li a {
-    color: #999;
-    margin: 0;
-    transition: background-color 0.3s ease;
-    display: block; 
-    width: 200px; 
+  .nav_item ul:hover {
+  display: block; /* 메뉴가 사라지지 않도록 유지 */
+}
+  /* .nav_item li:nth-child(3):hover {
+    transform: translateX(10px);
   } */
+  .nav_item li a {
+    box-sizing: border-box;
+    left: 300px;
+    color: #ebeaea;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.8s ease;
+  }
 
-  /* 드롭다운 간격 조정 */
-/* .nav_item li:nth-child(2) {
-  top: 40px; 
-}
-.nav_item li:nth-child(3) {
-  top: 80px; 
-}
-.nav_item li:nth-child(4) {
-  top: 120px; 
-}
-.nav_item li:nth-child(5) {
-  top: 160px; 
-} */
+  .nav_item li a:hover {
+    color: #fff;
+    padding: 0;
+  }
 
+  .header_item_menu a {
+    margin-top: 20px; 
+transform: translateX(30px);
+    text-align: center;
+    /* border: 1px solid #ff9dd9; */
+
+  }
+}

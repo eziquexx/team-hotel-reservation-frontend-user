@@ -113,7 +113,7 @@ h2{
     display: none;
   }
   #Footer {
-    height: 370px;
+    height: 80px;
     display: block !important ;
   } 
   #Footer:hover{
@@ -137,7 +137,7 @@ h2{
   }
   .conection_foot li {
    padding: 2px;
-   display: block ;
+   display: none ;
   }
 
   .location_foot {
