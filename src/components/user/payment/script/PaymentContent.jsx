@@ -83,7 +83,7 @@ export default function PaymentContent() {
     // PayPal 결제 방식 선택 시
     if (selectedPayment === 'payment_paypal' && resReservationId) {
       try {
-        const response = await fetch(`${apiUrl}/api/users/paypal/checkout/${resReservationId}`, {
+        const response = await fetch(`${env_API_BASE_URL}/api/users/paypal/checkout/${resReservationId}`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
