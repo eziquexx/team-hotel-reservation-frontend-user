@@ -4,6 +4,7 @@ import './css/Footer.css';
 
 export default function Footer() {
   const env_API_BASE_URL = process.env.REACT_APP_API_URL;
+  const env_SERVER_ADMIN_URL = process.env.REACT_APP_SERVER_ADMIN_URL;
   const [userInfo, setUserInfo] = useState(null); // 사용자 정보 상태
 
   // 사용자 정보 가져오기
@@ -81,7 +82,7 @@ export default function Footer() {
         <p className="horizon"></p>
         <div className="copyright_foot">
         <span className="admin">
-          <Link to="/admin">Admin</Link>
+          <Link to={env_SERVER_ADMIN_URL}>Admin</Link>
         </span>
           <span className="login">
           {userInfo ? (
