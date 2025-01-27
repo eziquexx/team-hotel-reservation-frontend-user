@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import '../css/MemberRegister.css';
 
 const MemberRegister = () => {
+    const env_API_BASE_URL = process.env.REACT_APP_API_URL;
     const [formData, setFormData] = useState({
         userId: '',
         email: '',
@@ -55,7 +56,7 @@ const MemberRegister = () => {
 
         // 서버 요청
         try {
-            const response = await fetch('http://localhost:8080/api/users/register', {
+            const response = await fetch(`${env_API_BASE_URL}/api/users/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

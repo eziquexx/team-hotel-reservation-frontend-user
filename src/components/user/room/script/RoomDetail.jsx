@@ -4,13 +4,14 @@ import "../css/RoomDetail.css";
 import { Link } from "react-router-dom";
 
 const RoomDetail = () => {
+  const env_API_BASE_URL = process.env.REACT_APP_API_URL;
   const { roomTypeName } = useParams();
   const [roomDetail, setRoomDetail] = useState(null);
 
   useEffect(() => {
     const fetchRoomDetail = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/users/rooms/detail/${roomTypeName}`, {
+        const response = await fetch(`${env_API_BASE_URL}/api/users/rooms/detail/${roomTypeName}`, {
           method: 'GET',
           headers: {
             "Content-Type" : "application/json",

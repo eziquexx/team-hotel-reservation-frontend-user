@@ -4,9 +4,9 @@ import '../../member/css/MemberLoginPage.css';
 import { useUserInfo } from '../../../common/UserInfoProvider';
 
 function MemberLoginPage() {
+    const env_API_BASE_URL = process.env.REACT_APP_API_URL;
     const [formData, setFormData] = useState({ userId: '', password: '' }); // 입력 데이터
     const [errorMessage, setErrorMessage] = useState(''); // 오류 메시지
-
     const navigate = useNavigate();
     const { fetchUserInfo } = useUserInfo(); // 사용자 정보
 
@@ -20,7 +20,7 @@ function MemberLoginPage() {
     const handleLogin = async (e) => {
         e.preventDefault(); // 폼 기본 동작 방지
         try {
-            const response = await fetch('http://localhost:8080/api/users/login', {
+            const response = await fetch(`${env_API_BASE_URL}/api/users/login`, {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",

@@ -15,6 +15,7 @@ export default function ReservationContent() {
   //   private BigDecimal basePrice;
   //   private Integer roomCount;
   // }
+  const env_API_BASE_URL = process.env.REACT_APP_API_URL;
   const [roomData, setRoomData] = useState([
     {
         roomTypeId : 0,
@@ -30,7 +31,7 @@ export default function ReservationContent() {
 
   useEffect(()=>{
     const fetchData = async () => {
-      const res = await customFetch("http://localhost:8080/api/users/rooms/types/count");
+      const res = await customFetch(`${env_API_BASE_URL}/api/users/rooms/types/count`);
       if (res !== null){
         setRoomData(res);
         setLoadComplete(true);

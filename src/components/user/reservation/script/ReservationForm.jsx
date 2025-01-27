@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { customFetch, REST } from "../../../../util/customFetch";
 
 function ReservationForm(){
-
+    const env_API_BASE_URL = process.env.REACT_APP_API_URL;
     const{
         roomTypeDataList, 
         reservationData,
@@ -99,7 +99,7 @@ function ReservationForm(){
 
         console.log(data);
         const fetchReservation = async () => {
-            const res = await customFetch("http://localhost:8080/api/users/reservation",data,REST.POST);
+            const res = await customFetch(`${env_API_BASE_URL}/api/users/reservation`,data,REST.POST);
 
             // if(res !== null){
             //     console.log(res.message);

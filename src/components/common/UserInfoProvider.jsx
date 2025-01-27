@@ -3,11 +3,12 @@ import React, { createContext, useContext, useState } from 'react';
 const UserInfoContext = createContext(null);
 
 export function UserInfoProvider({ children }) {
+    const env_API_BASE_URL = process.env.REACT_APP_API_URL;
     const [userInfo, setUserInfo] = useState(null);
 
     const fetchUserInfo = async () => {
         try {
-            const response = await fetch("http://localhost:8080/api/users/info", {
+            const response = await fetch(`${env_API_BASE_URL}/api/users/info`, {
                 method: "GET",
                 credentials: "include",
             });

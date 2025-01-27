@@ -5,12 +5,13 @@ import '../css/RoomContent.css'
 
 // RoomContent 컴포넌트
 export default function RoomContent() {
+  const env_API_BASE_URL = process.env.REACT_APP_API_URL;
   const [roomTypes, setRoomTypes] = useState([]);
 
   useEffect(() => {
     const fetchRoomTypes = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/users/rooms", {
+        const response = await fetch(`${env_API_BASE_URL}/api/users/rooms`, {
           method: 'GET',
           headers: {
             "Content-Type" : "application/json",

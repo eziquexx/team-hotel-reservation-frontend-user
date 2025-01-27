@@ -4,16 +4,16 @@ import { useNavigate, useParams } from "react-router-dom";
 
 // 24.12.11 지은 [작업중] : UI 및 조회수 증가 수정 해야함.
 export default function UsersNoticeDetailPage() {
+  const env_API_BASE_URL = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
   const { noticeId } = useParams();
   const [ data, setData ] = useState(null);
   const [ loading, setLoading ] = useState(true);
   const [ error, setError ] = useState(null);
 
-  
   const fetchNotice = useCallback(async () => {
     try {
-      const response = await fetch(`http://localhost:8080/api/users/notices/${noticeId}`, {
+      const response = await fetch(`${env_API_BASE_URL}/api/users/notices/${noticeId}`, {
         method: 'GET',
         headers: {
           "Content-Type" : "application/json",

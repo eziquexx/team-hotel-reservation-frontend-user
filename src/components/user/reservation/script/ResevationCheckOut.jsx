@@ -5,7 +5,7 @@ import { customFetch } from "../../../../util/customFetch";
 import ButtonEx from "../../../common/ButtonEx";
 
 function ReservationCheckOut(){
-
+    const env_API_BASE_URL = process.env.REACT_APP_API_URL;
     // props
     const {roomTypeDataList} = useOutletContext();
 
@@ -31,7 +31,7 @@ function ReservationCheckOut(){
 
     useEffect(()=>{
         const fetchData = async () => {
-            const res = await customFetch(`http://localhost:8080/api/users/reservation/summary/${selectedTimestamp}`);
+            const res = await customFetch(`${env_API_BASE_URL}/api/users/reservation/summary/${selectedTimestamp}`);
     
             if(res !== null){
                 setReservationSummary(res);
