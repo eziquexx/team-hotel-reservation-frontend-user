@@ -2,8 +2,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 // 24.12.11 지은 : payment에서 usePaginationFetch 가져옴.
 export default function usePaginationFetch(urlTest) {
-  const env_API_BASE_URL = process.env.REACT_APP_API_URL;
-  const fetchUrl = `${env_API_BASE_URL}/api/users/${urlTest}?page=${page}&size=${size}&sort_order=DESC`;
   const [ data, setData ] = useState([]);
   const [ loading, setLoading ] = useState(true);
   const [ error, setError ] = useState(null);
@@ -12,6 +10,8 @@ export default function usePaginationFetch(urlTest) {
   const [ page, setPage ] = useState(1); // 현재 페이지
   const size = 10; // 한 페이지에 표시할 항목 개수
   const isFirstLoad = useRef(true);
+  const env_API_BASE_URL = process.env.REACT_APP_API_URL;
+  const fetchUrl = `${env_API_BASE_URL}/api/users/${urlTest}?page=${page}&size=${size}&sort_order=DESC`;
 
   const fetchData = useCallback(async () => {
     setLoading(true);
