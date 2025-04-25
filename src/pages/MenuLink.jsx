@@ -4,7 +4,7 @@ import '../components/common/css/MenuLink.css';
 export default function MenuLink() {
   return (
   <>
-    <div className="Menu_title"><Link to="/mainNew" style={{ textDecoration: 'none', color: 'inherit' }}>
+    <div className="Menu_title"><Link to="/main" style={{ textDecoration: 'none', color: 'inherit' }}>
     StarellaHOTEL</Link>
     
    <span className="Menu_item_menu">
