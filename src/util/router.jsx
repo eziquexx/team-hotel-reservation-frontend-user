@@ -41,7 +41,10 @@ export const RouterInfo = [
     path: "/",
     element: <UserPage />, //  경로에서 UserPage를 기본으로 렌더링
     children: [
-     
+      {
+        path: "/",
+        element: <AboutContent />,
+      },
       {
         path: "about",
         element: <AboutContent />,
