@@ -90,7 +90,7 @@ h2{
   flex-wrap: nowrap;
   /* border: 1px solid #1283a2; */
 }
-.admin, span {
+.admin, #Footer span {
   margin: 10px 0 0 30px;
   font-size: 12px;
 }
