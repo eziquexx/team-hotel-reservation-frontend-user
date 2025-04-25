@@ -24,11 +24,12 @@
   /* box-shadow: 0 0 36px 0 rgba(209, 209, 209, 0.8); */
   /* transition: transform 0.8s ease, box-shadow 0.5s ease; */
 }
-.Menu_item_menu{
+.Menu_item_menu > button{
   font-weight: normal;
   font-size: 22px;
   margin-top:-4px;
   margin-right: 10px;
+  color: #a7a7a7;
   /* font-size: 20px; */
   /* right: 5px; */
   /* background-color: rgba(0, 0, 0, 0.9); */
@@ -36,7 +37,7 @@
   /* color:rgba(253, 253, 253, 0.9);  */
   /* border: 1px solid #ccc; */
 }
-.Menu_item_menu:hover{
+.Menu_item_menu > button:hover{
   color: #fff;
   transform: scale(1.1);
   transition: color 0.3s ease, transform 0.3s ease;

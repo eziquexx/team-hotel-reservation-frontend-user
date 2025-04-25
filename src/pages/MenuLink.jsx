@@ -1,16 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../components/common/css/MenuLink.css'; 
 
 export default function MenuLink() {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  }
+
   return (
   <div id="Menu_title_wrap">
     <div className="Menu_title">
       <Link to="/main" style={{ textDecoration: 'none'}}>
       {/* <Link to="/main" style={{ textDecoration: 'none', color: 'inherit' }}> */}
     StarellaHotel</Link>
-      <span className="Menu_item_menu">
-        <Link to="/menu"> : Menu</Link>
-      </span>
+      <div className="Menu_item_menu">
+        <button onClick={goBack}> : Close</button>
+        {/* <Link to="/menu"> : Menu</Link> */}
+      </div>
     </div>    
     <nav className="menu_container">
       <ul className="menu_list">
