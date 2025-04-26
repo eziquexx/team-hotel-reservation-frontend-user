@@ -59,44 +59,57 @@ export default function Footer() {
           <h2>
             <Link to="/main">StarellaHotel</Link>
           </h2>
-          <ul className="conection_foot">
-            <h3>CONTACT US</h3>
-            <li>예약문의 1544-8082</li>
-            <li>입금계좌 국민 004- 21-0848-651</li>
-            <li>카톡문의 @HJ Hotel </li>
-          </ul>
-          <ul className="location_foot">
-            <h4>GROUP INFORMAYION</h4>
-            <p>서울특별시 성동구 성수 1가 2동 현대아티첼리 포레스트리버 1007호</p>
-            <p>
-              사업자 번호 : 130-29-4839 | 등록 2001년 통신판매 업종 신고 : 제
-              2030-서울성수 -9228호 상호 : StarellaHotel 대표 :StarGroup
-            </p>
-            <p>
-              고객센터 : 1544-0834 팩스 ; 0505-200-0606 이메일 :
-              StarellaHotel@howep.co.kr
-            </p>
-            <p>@StarellaHotel - sample page </p>
-          </ul>
+          <div className="footer_rightWrap">
+            <ul className="conection_foot">
+              <li>
+                <h3>CONTACT US</h3>
+              </li>
+              <li className="footer_rightWrap_second">
+                <p>예약문의 1544-8082</p>
+                <p>입금계좌 국민 004- 21-0848-651</p>
+                <p>카톡문의 @HJ Hotel </p>
+              </li>
+            </ul>
+            <ul className="location_foot">
+              <li>
+                <h3>GROUP INFORMAYION</h3>
+              </li>
+              <li className="footer_rightWrap_second">
+                <p>서울특별시 성동구 성수 1가 2동 현대아티첼리 포레스트리버 1007호</p>
+                <p>
+                  사업자 번호: 130-29-4839 | 등록 2001년 통신판매 업종 신고: 제
+                  2030-서울성수 -9228호 | 상호: StarellaHotel | 대표: StarGroup
+                </p>
+                <p>
+                  고객센터: 1544-0834 | 팩스: 0505-200-0606 | 이메일:
+                  StarellaHotel@howep.co.kr
+                </p>
+              </li>
+              {/* <p>@StarellaHotel - sample page </p> */}
+            </ul>
+          </div>
         </div>
         <p className="horizon"></p>
         <div className="copyright_foot">
-        <span className="admin">
-          <Link to={env_SERVER_ADMIN_URL}>Admin</Link>
-        </span>
-          <span className="login">
-          {userInfo ? (
-              <>
-                <span>{userInfo.name}님 환영합니다</span> {/* 사용자 이름 표시 */}
-                <button onClick={handleLogout} className="logout-button">
-                  로그아웃
-                </button>
-              </>
-          ) : (
-              <Link to="/users/login">Login</Link> // 로그인 버튼 표시
-          )}
-        </span>
-          <span>StarellaHotel</span>
+          <div className="copyright_leftWrap">
+            <span className="admin">
+              <Link to={env_SERVER_ADMIN_URL}>Admin</Link>
+            </span>
+            <span className="login">
+              {userInfo ? (
+                  <>
+                    <span>{userInfo.name}님 환영합니다</span> {/* 사용자 이름 표시 */}
+                    <button onClick={handleLogout} className="logout-button">
+                      로그아웃
+                    </button>
+                  </>
+              ) : (
+                  <Link to="/users/login">Login</Link> // 로그인 버튼 표시
+              )}
+            </span>
+            {/* <span>StarellaHotel</span> */}
+          </div>
+          
           <div className="reservation_box">
             <Link to="/reservation/guide">Reservation Now</Link>
           </div>

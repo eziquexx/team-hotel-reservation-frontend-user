@@ -1,29 +1,37 @@
 /* Footer style*/
 #Footer {
   width: 100%;
-  height: 70px;
+  /* height: auto; */
+  height: 60px;
   position: fixed; 
   left: 0;
   bottom: 0; 
   background-color: rgba(45, 45, 45, 0.5);
   color: #fff;
   z-index: 1000; 
-  transition: height 0.5s ease; 
+  transition: height 0.5s ease;
 }
 #Footer:hover{
   height: 200px;
 }
-
 .Footer_container {
   width: 100%;
-  height: 150px;
+  /* height: 150px; */
+  padding: 18px 20px 20px;
   max-width:auto; 
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-top: 10px;
   color: #faf4f4;
+  /* padding-top: 10px; */
+}
+.Footer_container > h2 {
+  font-size: 22px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.Footer_container > h2:hover {
+  color: #bbbbbb;
 }
 
 /*//////////////////임시추가 로그아웃버튼색변경*/
@@ -31,84 +39,114 @@
   color: white;
 }
 .logout-button:hover {
-  color: #888888;
+  color: #bbbbbb;
 }
 /*/////////////////////*/
 
-h2{
+/* h2{
   margin:20px 30px;
+} */
+.Footer_container .footer_rightWrap {
+  display: flex;
 }
-.conection_foot{
-  width: 300px;
+.Footer_container .footer_rightWrap ul {
+  padding: 0;
+  margin: 0;
+  margin-top: 60px;
+  transition: margin-top 0.3s ease;
+}
+#Footer:hover .Footer_container .footer_rightWrap ul {
+  margin-top: 0;
+}
+.Footer_container .footer_rightWrap ul li.footer_rightWrap_second {
   margin-top: 10px;
-  margin-left: 300px;
-  
 }
-.conection_foot h3{
+.Footer_container .footer_rightWrap .conection_foot{
+  width: 180px;
+  margin-right: 26px;
+  /* margin-top: 10px; */
+  /* margin-left: 300px; */
+}
+.Footer_container .footer_rightWrap .conection_foot h3,
+.Footer_container .footer_rightWrap .location_foot h3 {
   font-size: 19px;
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
   letter-spacing: 1px;
 }
-.conection_foot h3::first-letter{
+/* .conection_foot h3::first-letter{
   font-size: 26px;
+} */
+.Footer_container .footer_rightWrap .conection_foot li,
+.Footer_container .footer_rightWrap .location_foot li {
+  font-size: 12px;
+  line-height: 1.8;
+  /* margin-top: 0px; */
+  /* display:none; */
 }
-.conection_foot li{
-  margin-top: 0px;
-  font-size: 10px;
-  line-height: 15px;
-  display:none;
-}
-
-.location_foot{
+/* .Footer_container .footer_rightWrap .location_foot{
   width: 740px;
   margin: 10px 30px ;
- 
-}
-.location_foot p{
+} */
+/* .Footer_container .footer_rightWrap .location_foot li p{
   margin-top: 10px;
   font-size: 9px;
   display: none; 
-}
-.location_foot:hover{
+} */
+/* .location_foot:hover{
   margin-top: 5px;
-}
-
-#Footer:hover .conection_foot li, #Footer:hover .location_foot p {
+} */
+/* #Footer:hover .conection_foot li, #Footer:hover .location_foot p {
   display: block;
-}
-
-.horizon{
+} */
+#Footer .horizon{
   width: 100%;
   border-bottom: 1px solid #fff;
-  
 }
-.copyright_foot{
+#Footer .copyright_foot{
   color: #f9f7f7;
   display: flex;
-  height: 50px;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: nowrap;
+  padding: 12px 20px;
+  /* height: 50px; */
   /* border: 1px solid #1283a2; */
 }
-.admin, #Footer span {
+.copyright_foot .copyright_leftWrap span a {
+  display: inline-block;
+  font-size: 13px;
+  margin-right: 16px;
+  transition: color 0.3s ease;
+}
+.copyright_foot .copyright_leftWrap span a:hover {
+  color: #bbbbbb;
+}
+/* .admin, #Footer span {
   margin: 10px 0 0 30px;
   font-size: 12px;
-}
-
-.reservation_box{
-  width: 150px;
-  height: 30px;
+} */
+.copyright_foot .reservation_box a {
+  display: block;
   color: #f9f7f7;
-  margin: 10px 30px ;
-  font-size: 13px;
-  padding-top: 5px;
+  padding: 8px 20px;
+  font-size: 12px;
   text-align: center;
   border: 1px solid rgba(214,211,211,.5);
-  margin-left: auto;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  /* width: 150px; */
+  /* height: 30px; */
+  /* margin: 10px 30px ; */
+  /* padding-top: 5px; */
+  /* margin-left: auto; */
+}
+.copyright_foot .reservation_box:hover a {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* 반응형  */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   h2 {
     display: none;
   }
@@ -155,4 +193,4 @@ h2{
   .conection_foot, .location_foot {
     display: block ;
   }
-}
+} */
