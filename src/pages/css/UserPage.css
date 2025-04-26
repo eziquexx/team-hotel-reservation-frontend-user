@@ -19,7 +19,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(60%); 
+    filter: brightness(40%); 
+    /* filter: brightness(60%);  */
     z-index: -1; 
   }
   
