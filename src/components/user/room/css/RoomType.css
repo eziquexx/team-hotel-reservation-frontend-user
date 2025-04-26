@@ -13,10 +13,11 @@ body {
 
 /* RoomContent 영역 */
 .room-content {
-    max-width: 1400px;
-    margin: 0 auto 240px;
-    padding: 20px;
-    background-color: #fff;
+    padding: 0 40px;
+    /* max-width: 1400px; */
+    /* margin: 0 auto 240px; */
+    /* padding: 20px; */
+    /* background-color: #fff; */
 }
 
 .room-content h1 {
@@ -30,7 +31,8 @@ body {
 .room-type-list {
     display: flex;
     flex-wrap: wrap; /* 자동 줄바꿈 */
-    gap: 20px; /* 카드 간 간격 */
+    gap: 40px; /* 카드 간 간격 */
+    /* gap: 20px; 카드 간 간격 */
     justify-content: space-between; /* 가로 정렬 */
 }
 
