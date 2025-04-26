@@ -9,8 +9,9 @@
   position: fixed;
   z-index: 10;
   padding-top: 20px;
-  background-color: rgba(105, 105, 105, 0.5);
+  background-color: rgba(45, 45, 45, 0.5);
   transition: height 0.5s ease; 
+  /* background-color: rgba(105, 105, 105, 0.5); */
 }
 
 #header:hover {
@@ -129,6 +130,7 @@
 } */
 .nav_item > a {
   margin-bottom: 6px;
+  line-height: 2;
 }
 /* 드롭다운 메뉴 활성화 */
 .nav_item:hover > li {
