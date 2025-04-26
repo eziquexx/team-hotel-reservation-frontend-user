@@ -1,17 +1,22 @@
 /* MenuLink style */
 #Menu_title_wrap {
+  position: relative;
   height: 100vh;
   overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 .Menu_title{
+  position: absolute;
+  z-index: 100;
+  width: 100%;
   display: flex;
   justify-content:space-between;
   align-items: center; 
   padding: 10px 20px 0;
   font-size: 24px;
   font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.9);
   color: #a7a7a7;
+  /* background-color: rgba(0, 0, 0, 0.9); */
   /* padding: 20px 0 0 30px; */
   /* color:rgba(253, 253, 253, 0.9); */
   /* border: 1px solid #ccc;  */
@@ -49,17 +54,18 @@
   position: relative;
   /* width: 100vw; */
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
+  /* background-color: rgba(0, 0, 0, 0.9); */
   
 }
 .menu_list{
   position: absolute;
-  width: 80%;
-  height: 80%;
   top: 50%;
   left: 50%;
+  padding: 0;
+  margin: 0;
   transform: translate(-50%, -50%);
-  
+  /* width: 80%; */
+  /* height: 80%; */
 }
 .menu_list li{
   margin:50px 10px ;
@@ -81,4 +87,10 @@
   /* border-radius: 10px; */
   /* transition: transform 0.8s ease, box-shadow 0.5s ease; */
   /* font-weight: bold; */
+}
+.menu_list li:first-child {
+  margin-top: 0;
+}
+.menu_list li:last-child {
+  margin-bottom: 0;
 }
