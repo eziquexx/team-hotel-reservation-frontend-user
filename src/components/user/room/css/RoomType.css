@@ -74,11 +74,11 @@ body {
 }
 
 /* 객실 정보 */
-.room-info {
+/* .room-info {
     padding: 15px 20px;
     text-align: center;
-    border-top: 1px solid #ececec; /* 구분선 */
-}
+    border-top: 1px solid #ececec; 
+} */
 
 .room-name {
     width: 100%;
