@@ -3,7 +3,7 @@ import '../css/AboutContent.css';
 
 export default function AboutContent() {
   return (
-    <nav className="About_container">
+    <div className="About_container">
       <ul className='About_list'>
         <li className="title">
           <h2>About</h2>
@@ -29,6 +29,6 @@ export default function AboutContent() {
           </p>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 }

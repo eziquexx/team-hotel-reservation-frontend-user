@@ -30,7 +30,7 @@ export default function RoomContent() {
 
   return (
     <div className="RoomView_Top">
-      <nav className="RoomView_container">
+      <div className="RoomView_container">
         <ul className="RoomView_list">
           <li className="title">
             <h2>RoomView</h2>
@@ -50,7 +50,7 @@ export default function RoomContent() {
             </div>
           </li>
         </ul>
-      </nav>
+      </div>
     </div>
 
   );
