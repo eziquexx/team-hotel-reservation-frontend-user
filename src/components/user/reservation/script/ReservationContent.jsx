@@ -42,16 +42,18 @@ export default function ReservationContent() {
   },[])
 
   return (
-    <div id="rservationContent">
-      <div className="container p-5 text-light">
-      {
-        loadContentComplete && 
-            <Outlet 
-              context={{
-                roomTypeDataList: roomData
-              }} 
-            />
-      }
+    <div className="Reservation_container">
+      <div id="rservationContent">
+        <div className="container p-5 text-light">
+        {
+          loadContentComplete && 
+              <Outlet 
+                context={{
+                  roomTypeDataList: roomData
+                }} 
+              />
+        }
+        </div>
       </div>
     </div>
   );

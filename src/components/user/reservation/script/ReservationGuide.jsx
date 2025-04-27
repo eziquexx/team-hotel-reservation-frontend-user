@@ -55,7 +55,10 @@ function ReservationGuide(){
 
     return(
         <>
-        <h1 className="text-center my-1">Reservation Info</h1>
+        <div className="title">
+            <h1 className="text-center my-1">Reservation Info</h1>
+        </div>
+        <div className="contentsWrap">
             <div className="container border p-2 m-2">
                 <Table id="guideTable" bordered>
                 <thead>
@@ -88,12 +91,13 @@ function ReservationGuide(){
                     <p id="sample_title" className="p-1">{item.title}</p>
                     <div>
                         {item.content.map((text,secIndex)=>(
-                                <p key={secIndex}>{`-${text}`}</p>
+                                <p key={secIndex}>{`- ${text}`}</p>
                             )
                         )}
                     </div>
                 </div>)
             )}
+        </div>
         </>
     );
 }

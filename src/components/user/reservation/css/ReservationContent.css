@@ -1,17 +1,52 @@
 /* ReservationContent.css */
-#rservationContent{
-    padding-top: 50px;
-    padding-bottom: 220px;
-    background-color: rgba(0,0,0,0.5);
-    width: 50% !important; /* 테이블 너비를 현재의 70%로 설정 */
-    margin: 0 auto; /* 테이블 가운데 정렬 */
-    border-collapse: collapse; /* 경계선 축소 */
+.Reservation_container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%; 
+}
+.Reservation_container #rservationContent {
+    width: 80%;
+    padding: 100px 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    /* border-collapse: collapse;  */
+}
+.Reservation_container #rservationContent div.title {
+    text-align: center;
+    color: #ececec;
+}
+.Reservation_container #rservationContent div.title h1 {
+    font-size: 48px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0 20px 8px;
+    border-bottom: 1px solid #fff;
+}
+.Reservation_container #rservationContent .container {
+    padding: 0 !important;
+}
+.Reservation_container #rservationContent div.contentsWrap {
+    margin-top: 38px;
+}
+.Reservation_container #rservationContent div.contentsWrap .container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 17px 20px !important;
+}
+.Reservation_container #rservationContent div.contentsWrap .container p {
+    padding: 0 !important;
 }
 
 #rservationContent #guideTable{
     --bs-table-bg: rgba(0,0,0,0.5);
     --bs-table-color: rgba(255,255,255,0.7);
-    
+    margin-bottom: 0;
 }
 
 #guideTable th,
@@ -19,12 +54,14 @@
   letter-spacing: 1px;
   padding: 1px;
   text-align: center;
+  vertical-align: middle;
 }
 #guideTable thead{
     font-weight: bold;
 }
 .container {
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 2;
     --bs-table-color: rgba(255,255,255,0.5);
     color:rgba(255,255,255,0.7);
     /* border: 2px solid #6df568cc; */
@@ -34,10 +71,9 @@
 }
 
 #sample_title{
-    /* border: 2px solid #f4f76bcc; */
- font-weight: bold;
+    font-weight: bold;
+    font-size: 16px;
 }
 .text-center {
     color:rgba(255,255,255,0.9);
-   
 }
