@@ -4,7 +4,7 @@ import '../css/SpecialContent.css';
 //24.11.25 지은 [완료] : SpecialContent 테스트.
 export default function SpecialContent() {
   return (
-    <div className="Special_container">
+    <div>
       <Outlet />
       {/* <ul className="Special_list">
         <li className="title">

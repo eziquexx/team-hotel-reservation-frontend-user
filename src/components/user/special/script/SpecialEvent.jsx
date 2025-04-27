@@ -2,7 +2,7 @@ import '../css/SpecialContent.css';
 
 export default function SpecialEvent() {
   return (
-    <div>
+    <div className="Special_container">
       <ul className="Special_list">
         <li className="title">
           <h2>Event</h2>
