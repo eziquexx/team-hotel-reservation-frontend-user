@@ -45,7 +45,7 @@
 }
 .RoomDetail_container .RoomDetail_list .room-description h2{
     font-weight: lighter;
-    width: 350px;
+    text-align: center;
     color: white;
     padding-top: 30px;
     margin: auto;
