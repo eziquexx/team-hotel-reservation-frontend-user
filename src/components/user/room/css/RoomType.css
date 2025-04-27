@@ -76,7 +76,7 @@ body {
 /* 객실 정보 */
 .room-info {
     padding: 15px 20px;
-    text-align: left;
+    text-align: center;
     border-top: 1px solid #ececec; /* 구분선 */
 }
 
@@ -116,11 +116,10 @@ body {
 
 /* 디테일 텍스트 */
 .room-occupancy {
-    width: 200px;
     font-size: 1rem;
     color: #4f5555;
     margin: auto;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 /* 반응형 스타일 */
