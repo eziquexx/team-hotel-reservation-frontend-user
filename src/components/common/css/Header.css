@@ -10,12 +10,13 @@
   z-index: 10;
   padding-top: 20px;
   background-color: rgba(45, 45, 45, 0.5);
-  transition: height 0.5s ease; 
+  transition: height 0.5s ease, background-color 0.5s ease; 
   /* background-color: rgba(105, 105, 105, 0.5); */
 }
 
 #header:hover {
   height: 240px; /* 호버 시 헤더 높이 확장 */
+  background-color: rgba(0, 0, 0, 0.9);
 }
 #header:hover > .header_menu_navbar > .nav_item {
   height: 220px;

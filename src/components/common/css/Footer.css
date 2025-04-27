@@ -9,10 +9,11 @@
   background-color: rgba(45, 45, 45, 0.5);
   color: #fff;
   z-index: 1000; 
-  transition: height 0.5s ease;
+  transition: height 0.5s ease, background-color 0.5s ease;
 }
 #Footer:hover{
   height: 200px;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 .Footer_container {
   width: 100%;
