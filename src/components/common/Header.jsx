@@ -61,10 +61,10 @@ const Header = () => {
             <Link to="/special">Special</Link>
           </li>
           <li className="dropdown">
-            <Link to="/special">Event</Link>
+            <Link to="/special/event">Event</Link>
           </li>
           <li className="dropdown">
-            <Link to="/special">BlackFirst</Link>
+            <Link to="/special/breakfast">Breakfast</Link>
           </li>
         </ul>
 

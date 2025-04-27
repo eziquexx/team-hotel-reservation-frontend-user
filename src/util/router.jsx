@@ -25,6 +25,9 @@ import MemberRegister from "../components/user/member/script/MemberRegister";
 import MemberLoginPage from "../components/user/member/script/MemberLoginPage";
 import MemberSignUp from "../components/user/member/script/MemberSignUp";
 import MemberSignUpComplete from "../components/user/member/script/MemberSignUpComplete";
+import SpecialSpecial from "../components/user/special/script/SpecialSpecial";
+import SpecialEvent from "../components/user/special/script/SpecialEvent";
+import SpecialBreakfast from "../components/user/special/script/SpecialBreakfast";
 
 export const RouterInfo = [
   
@@ -60,6 +63,20 @@ export const RouterInfo = [
       {
         path: "special",
         element: <SpecialContent />,
+        children: [
+          {
+            path: "",
+            element: <SpecialSpecial />,
+          },
+          {
+            path: "event",
+            element: <SpecialEvent />,
+          },
+          {
+            path: "breakfast",
+            element: <SpecialBreakfast />,
+          }
+        ]
       },
       {
         path: "reservation",
