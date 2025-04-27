@@ -21,7 +21,8 @@
     text-align: center;
     color: #ececec;
 }
-.Reservation_container #rservationContent div.title h1 {
+.Reservation_container #rservationContent div.title h1,
+.Reservation_container #rservationContent .text-container .row h1 {
     font-size: 48px;
     font-weight: bold;
     display: inline-block;
@@ -30,6 +31,33 @@
 }
 .Reservation_container #rservationContent .container {
     padding: 0 !important;
+}
+.Reservation_container #rservationContent .text-container .row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.Reservation_container #rservationContent .text-container .row button {
+    color: #fff;
+}
+.Reservation_container #rservationContent .text-container .row button:hover {
+    color: #bbb;
+}
+.Reservation_container #rservationContent .text-container .calrow {
+    margin-top: 38px;
+}
+.Reservation_container #rservationContent .text-container .calrow .border-secondary {
+    line-height: 1.6;
+    padding: 10px 14px 12px;
+}
+.Reservation_container #rservationContent .text-container .calrow .border-secondary #cell:hover {
+    color: #fff;
+    cursor: pointer;
+}
+.Reservation_container #rservationContent .text-container .calrow .border-secondary #cell > p {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #dddddd;
 }
 .Reservation_container #rservationContent div.contentsWrap {
     margin-top: 38px;
@@ -42,6 +70,7 @@
 .Reservation_container #rservationContent div.contentsWrap .container p {
     padding: 0 !important;
 }
+
 
 #rservationContent #guideTable{
     --bs-table-bg: rgba(0,0,0,0.5);

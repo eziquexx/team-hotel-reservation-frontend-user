@@ -33,7 +33,7 @@ function CustomCalendar({year, month, customContent, onCellClick}){
     }
 
     return (
-        <div className={'row row-cols-7'}>
+        <div className={'row row-cols-7 calrow'}>
             {dayArr.map((day,index)=>(
                     <div className='col' key={index}>
                         <p>{day}</p>
