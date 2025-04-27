@@ -43,6 +43,11 @@
 }
 #usersCommunityContent .contentTable {
   font-size: 11px;
+  height: 440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 #usersCommunityContent .modal-item-text {
   margin-left: 6px;
