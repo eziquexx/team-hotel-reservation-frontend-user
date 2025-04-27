@@ -74,7 +74,7 @@ const Header = () => {
             <Link to="/community/notice">Notice</Link>
           </li>
           <li className="dropdown">
-            <Link to="/community">Q&A</Link>
+            <Link to="/community/qna">Q&A</Link>
           </li>
         </ul>
       </div>

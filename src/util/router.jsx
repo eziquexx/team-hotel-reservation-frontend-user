@@ -28,6 +28,9 @@ import MemberSignUpComplete from "../components/user/member/script/MemberSignUpC
 import SpecialSpecial from "../components/user/special/script/SpecialSpecial";
 import SpecialEvent from "../components/user/special/script/SpecialEvent";
 import SpecialBreakfast from "../components/user/special/script/SpecialBreakfast";
+import CommunityQna from "../components/user/community/script/CommunityQna";
+import CommunityNotice from "../components/user/community/script/CommunityNotice";
+import UsersNoticeTable from "../components/user/community/script/UsersNoticeTable";
 
 export const RouterInfo = [
   
@@ -116,12 +119,22 @@ export const RouterInfo = [
         children: [
           {
             path: "notice",
-            element: <UsersNoticeList />,
+            element: <CommunityNotice />,
+            children: [
+              {
+                path: "",
+                element: <UsersNoticeList />,
+              },
+              {
+                path: ":noticeId",
+                element: <UsersNoticeDetailPage />
+              }
+            ]
           },
           {
-            path: "notice/:noticeId",
-            element: <UsersNoticeDetailPage />
-          },
+            path: "qna",
+            element: <CommunityQna />
+          }
         ]
       },
       {
