@@ -133,25 +133,32 @@
 }
 
 .Reservation_container #rservationContent .text-container .possible_room {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .Reservation_container #rservationContent .text-container .possible_room .title h4 {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 18px;
+    font-size: 30px;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
 }
-.Reservation_container #rservationContent .text-container .possible_room .title h4 span {
+.Reservation_container #rservationContent .text-container .possible_room .title h4 > span {
     font-size: 16px;
-    margin-left: 14px;
+    margin-top: 14px;
     font-weight: normal;
 }
 
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents {
+    padding: 30px 50px !important;
+}
 .Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .left_contents {
     padding: 0;
 }
 .Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .left_contents .title {
     text-align: left;
     margin-bottom: 8px;
+    font-size: 18px;
 }
 .Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .left_contents .select_contents .col {
     padding: 0;
@@ -215,7 +222,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info {
     display: flex;
@@ -303,7 +310,7 @@
 }
 
 .Reservation_container #rservationContent .text-container .possible_room .button_group {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .Reservation_container #rservationContent .text-container .possible_room .button_group .row .button {
     margin-top: 0 !important;

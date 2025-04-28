@@ -201,7 +201,7 @@ function ReservationForm(){
                 <div className="guest_payments_group">
                     <div className="row row-cols-2 guest_info">
                         <div className="title">
-                            <h4>예약자 정보입력</h4>
+                            <h4>예약자 정보 입력</h4>
                         </div>
                         <div className="contents">
                             <div className="row row-cols-2">
@@ -226,7 +226,7 @@ function ReservationForm(){
                     </div>
                     <div className="payments_info">
                         <div className="title">
-                            <h4>결제금액 안내</h4>
+                            <h4>결제 금액 안내</h4>
                         </div>
                         <div>
                             <div>
