@@ -116,7 +116,7 @@ function ReservationForm(){
     return(
         <>
             {/* 미니 달력 / 선택한 날짜 */}
-            <div className="row row-cols-2">
+            <div className="row row-cols-2 formrow">
                 <div>
                     <CustomCalendar
                         year={selectedYearAndMonth.year} 
@@ -139,17 +139,19 @@ function ReservationForm(){
                 </div>               
             </div>
             
-            <div>
+            <div className="possible_room">
                 {/* 객실 선택 */}
-                <div>
-                    <div><h4>객실선택<span>현재 예약 가능한 객실 입니다.</span></h4></div>
-                    <div>
+                <div className="choose_room">
+                    <div className="title">
+                        <h4>객실선택<span>현재 예약 가능한 객실 입니다.</span></h4>
+                    </div>
+                    <div className="choose_room_contents_group">
                         {roomTypeDataList.map((item,index)=>(
-                                <div className="p-3 m-2 row border" key={index}>
-                                    <div className="col-8">
-                                        <div>{`${item.name} / ${item.description}`}</div>
+                                <div className="p-3 m-2 row border contents" key={index}>
+                                    <div className="col-8 left_contents">
+                                        <div className="title">{`${item.name} / ${item.description}`}</div>
                                     
-                                        <div className="row">
+                                        <div className="row select_contents">
                                             <div className="col">
                                                 <div className="input-group mb-3">
                                                     <label className="input-group-text" for="reserve_period_select">숙박기간</label>
@@ -176,15 +178,15 @@ function ReservationForm(){
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-4 row justify-content-center">
-                                        <div className="col-4">
+                                    <div className="col-4 row justify-content-center right_contents">
+                                        <div className="col-4 price_contents">
                                             <p>결제금액</p>
                                             <h2>{reservationPeriodList[index]*item.basePrice}</h2>
                                         </div>
-                                        <div className="col-4">
+                                        <div className="col-4 select_contents">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="select_room" id="selectRoom" value={index} checked={selectedRoom === index} onChange={()=>onCheckedRoom(index)}/>   
-                                                <label class="form-check-label" htmlFor="selectRoom">
+                                                <input class="form-check-input" type="radio" name="select_room" id={index} value={index} checked={selectedRoom === index} onChange={()=>onCheckedRoom(index)}/>   
+                                                <label class="form-check-label" htmlFor={index}>
                                                    선택
                                                 </label>
                                             </div>
@@ -196,32 +198,34 @@ function ReservationForm(){
                     </div>
                 </div>
                 {/* 예약자 정보입력 / 총 결제금액 안내 */}
-                <div className="row row-cols-2">
-                    <div>
+                <div className="row row-cols-2 guest_info">
+                    <div className="title">
                         <h4>예약자 정보입력</h4>
-                        <div>
-                            <div className="row row-cols-2">
-                                <div className="col">
-                                    <input type="text" name="wr_name" required placeholder="예약자의 이름을 입력해주세요."/>
-                                </div>
-                                <div className="col">
-                                    <input type="text" name="sh_phone" required placeholder="예약자 연락처"/>
-                                </div>
-                                <div className="col">
-                                    {/* 뭘넣지...? */}
-                                </div>
-                                <div className="col">
-                                    <Link to="">환불규정 및 약관</Link>
-                                    <span>
-                                        <label htmlFor="all_agr">전체 동의</label>
-                                        <input type="checkbox" id="all_agr"/>
-                                    </span>
-                                </div>
+                    </div>
+                    <div className="contents">
+                        <div className="row row-cols-2">
+                            <div className="col">
+                                <input type="text" name="wr_name" required placeholder="예약자의 이름을 입력해주세요."/>
+                            </div>
+                            <div className="col">
+                                <input type="text" name="sh_phone" required placeholder="예약자 연락처"/>
+                            </div>
+                            <div className="col">
+                                {/* 뭘넣지...? */}
+                            </div>
+                            <div className="col">
+                                <Link to="">환불규정 및 약관</Link>
+                                <span>
+                                    <label htmlFor="all_agr">전체 동의</label>
+                                    <input type="checkbox" id="all_agr"/>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h4>결제금액 안내</h4>
+                    <div className="payments_info">
+                        <div className="title">
+                            <h4>결제금액 안내</h4>
+                        </div>
                         <div>
                             <div>
                                 최종결제금액
@@ -244,7 +248,7 @@ function ReservationForm(){
                     </div>
                 </div>
                 {/* 취소 / 예약하기 버튼 */}
-                <div className="container px-5">
+                <div className="container px-5 ">
                     <div className="row gx-5 justify-content-center">
                         <Link to="/reservation/check_out" className="col-2 p-3 m-3 btn bg-light border">취소</Link>
                         <div className="col-2 p-3 m-3 btn bg-light border" onClick={onClickReservation}>예약하기</div>
