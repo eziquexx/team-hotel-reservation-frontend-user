@@ -146,22 +146,18 @@
     font-weight: normal;
 }
 
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .left_contents {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .left_contents {
     padding: 0;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .left_contents .title {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .left_contents .title {
     text-align: left;
     margin-bottom: 8px;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .left_contents .select_contents .col {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .left_contents .select_contents .col {
     padding: 0;
     margin-right: 20px;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .right_contents {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents {
     width: 33.33333333%;
     display: flex;
     flex-direction: row;
@@ -169,27 +165,23 @@
     align-items: center;
     padding: 0;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .right_contents .price_contents {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .price_contents {
     width: auto;
     padding: 0;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .right_contents .select_contents {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents {
     width: auto;
     padding: 0;
     margin-left: 50px;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input {
     appearance: none;
     -webkit-appearance: none;
     width: 20px;
@@ -202,12 +194,10 @@
     position: relative;
     margin-right: 10px;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input:checked {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input:checked {
     background-color: #464646;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input:checked::after {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input:checked::after {
     content: "";
     position:absolute;
     top: 4px;
@@ -216,8 +206,113 @@
     height: 8px;
     background-color: #fff;
 }
-.Reservation_container #rservationContent .text-container .possible_room 
-.choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-label {
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-label {
     font-size: 16px;
     cursor: pointer;
+}
+
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 40%;
+    margin-right: 60px !important;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .title {
+    width: auto;
+    padding: 0;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .title > h4 {
+    text-align: center;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .col {
+    padding: 0;
+    width: 100%;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .col > input {
+    width: 100%;
+    padding: 6px 10px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .col input:nth-child(1) {
+    margin-bottom: 6px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 16px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span > label {
+    margin-right: 10px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span > input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span > input:checked {
+    background-color: #464646;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span > input:checked::after {
+    content: "";
+    position:absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+}
+
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .payments_info {
+    width: 40%;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .payments_info .title > h4 {
+    text-align: center;
+}
+
+.Reservation_container #rservationContent .text-container .possible_room .button_group {
+    margin-top: 50px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .button_group .row .button {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    background-color: #fff !important;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.Reservation_container #rservationContent .text-container .possible_room .button_group .row .button:hover {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: #fff;
 }

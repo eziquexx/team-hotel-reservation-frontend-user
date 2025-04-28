@@ -198,27 +198,29 @@ function ReservationForm(){
                     </div>
                 </div>
                 {/* 예약자 정보입력 / 총 결제금액 안내 */}
-                <div className="row row-cols-2 guest_info">
-                    <div className="title">
-                        <h4>예약자 정보입력</h4>
-                    </div>
-                    <div className="contents">
-                        <div className="row row-cols-2">
-                            <div className="col">
-                                <input type="text" name="wr_name" required placeholder="예약자의 이름을 입력해주세요."/>
-                            </div>
-                            <div className="col">
-                                <input type="text" name="sh_phone" required placeholder="예약자 연락처"/>
-                            </div>
-                            <div className="col">
-                                {/* 뭘넣지...? */}
-                            </div>
-                            <div className="col">
-                                <Link to="">환불규정 및 약관</Link>
-                                <span>
-                                    <label htmlFor="all_agr">전체 동의</label>
-                                    <input type="checkbox" id="all_agr"/>
-                                </span>
+                <div className="guest_payments_group">
+                    <div className="row row-cols-2 guest_info">
+                        <div className="title">
+                            <h4>예약자 정보입력</h4>
+                        </div>
+                        <div className="contents">
+                            <div className="row row-cols-2">
+                                <div className="col">
+                                    <input type="text" name="wr_name" required placeholder="예약자의 이름을 입력해주세요."/>
+                                </div>
+                                <div className="col">
+                                    <input type="text" name="sh_phone" required placeholder="예약자 연락처"/>
+                                </div>
+                                <div className="col">
+                                    {/* 뭘넣지...? */}
+                                </div>
+                                <div className="col agree_check">
+                                    <Link to="">환불규정 및 약관</Link>
+                                    <span>
+                                        <label htmlFor="all_agr">전체 동의</label>
+                                        <input type="checkbox" id="all_agr"/>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -228,30 +230,31 @@ function ReservationForm(){
                         </div>
                         <div>
                             <div>
-                                최종결제금액
-                                <p><span>{reservationPeriodList[selectedRoom]*roomTypeDataList[selectedRoom].basePrice}</span>원</p>
+                                
+                                <p><b>최종결제금액: </b><span>{reservationPeriodList[selectedRoom]*roomTypeDataList[selectedRoom].basePrice}</span>원</p>
                             </div>
                             <div>
-                                <p><b>예약문의</b>{`    1544-6062`}</p>
-                                <p><b>결제기한</b>{`    예약 후 24시간 이내 (${setDay(
+                                <p><b>예약문의: </b>{`    1544-6062`}</p>
+                                <p><b>결제기한: </b>{`    예약 후 24시간 이내 (${setDay(
                                                     toDate(selectedTimestamp, { timeZone: 'Asia/Seoul' }), 
                                                     toDate(selectedTimestamp, { timeZone: 'Asia/Seoul' }).getDay() + 1)}까지)`
                                                 }
                                 </p>
                                 <p>
-                                    결제 기한 내 결제확인 되지 않으면 예약이 자동 취소됩니다. <br />
-                                    결제확인 되면 예약완료 문자가 휴대폰으로 전송됩니다. <br />
-                                    결제하실 때 예약자명으로 결제하셔야 빠른 확인이 가능합니다.
+                                    * 결제 기한 내 결제확인 되지 않으면 예약이 자동 취소됩니다. <br />
+                                    * 결제확인 되면 예약완료 문자가 휴대폰으로 전송됩니다. <br />
+                                    * 결제하실 때 예약자명으로 결제하셔야 빠른 확인이 가능합니다.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 {/* 취소 / 예약하기 버튼 */}
-                <div className="container px-5 ">
+                <div className="container px-5 button_group">
                     <div className="row gx-5 justify-content-center">
-                        <Link to="/reservation/check_out" className="col-2 p-3 m-3 btn bg-light border">취소</Link>
-                        <div className="col-2 p-3 m-3 btn bg-light border" onClick={onClickReservation}>예약하기</div>
+                        <Link to="/reservation/check_out" className="col-2 p-3 m-3 btn bg-light border button">취소</Link>
+                        <div className="col-2 p-3 m-3 btn bg-light border button" onClick={onClickReservation}>예약하기</div>
                     </div>
                 </div>
             </div>
