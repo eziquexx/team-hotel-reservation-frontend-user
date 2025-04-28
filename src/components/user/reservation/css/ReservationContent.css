@@ -69,18 +69,20 @@
 }
 .Reservation_container #rservationContent div.contentsWrap .container p {
     padding: 0 !important;
+    font-size: 15px;
 }
 
 #rservationContent #guideTable{
     --bs-table-bg: rgba(0,0,0,0.5);
     --bs-table-color: rgba(255,255,255,0.7);
     margin-bottom: 0;
+    font-size: 15px;
 }
 
 #guideTable th,
 #guideTable td {
   letter-spacing: 1px;
-  padding: 1px;
+  padding: 4px 0;
   text-align: center;
   vertical-align: middle;
 }
@@ -100,7 +102,7 @@
 
 #sample_title{
     font-weight: bold;
-    font-size: 16px;
+    font-size: 17px !important;
 }
 .text-center {
     color:rgba(255,255,255,0.9);
@@ -113,6 +115,13 @@
     font-size: 26px;
     padding: 0;
     border: 0;
+}
+.Reservation_container #rservationContent .text-container .formrow .right_contents .title {
+    text-align: left;
+}
+.Reservation_container #rservationContent .text-container .formrow .right_contents .contents {
+    font-size: 15px;
+    margin-top: 12px;
 }
 .Reservation_container #rservationContent .text-container .formrow .calrow {
     margin-top: 0;
@@ -304,6 +313,9 @@
 
 .Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .payments_info {
     width: 40%;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .payments_info .contents {
+    font-size: 15px;
 }
 .Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .payments_info .title > h4 {
     text-align: center;

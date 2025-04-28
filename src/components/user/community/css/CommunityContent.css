@@ -42,7 +42,7 @@
   margin: 38px auto 0;
 }
 #usersCommunityContent .contentTable {
-  font-size: 11px;
+  font-size: 15px;
   height: 440px;
   display: flex;
   justify-content: space-between;
@@ -57,10 +57,10 @@
   --bs-table-color: #ffffff;
   --bs-table-hover-color: #c0c0c0;
   border-color: #373737;
-  font-size: 12px;
+  font-size: 15px;
 }
 #usersCommunityContent .pagination {
-  font-size: 12px;
+  font-size: 15px;
   --bs-pagination-bg: rgba(0,0,0,0.5);
   --bs-pagination-border-color: #373737;
   --bs-pagination-focus-bg: rgba(59, 59, 59, 0.5);
@@ -93,7 +93,7 @@
 }
 
 #usersCommunityContent .detail-page .btn {
-  font-size: 12px;
+  font-size: 15px;
   padding: 9px 15px;
   margin-top: 10px;
   --bs-btn-bg: rgba(0,0,0,0.5);

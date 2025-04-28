@@ -117,7 +117,7 @@ function ReservationForm(){
         <>
             {/* 미니 달력 / 선택한 날짜 */}
             <div className="row row-cols-2 formrow">
-                <div>
+                <div className="left_contents">
                     <CustomCalendar
                         year={selectedYearAndMonth.year} 
                         month={selectedYearAndMonth.month-1} 
@@ -125,14 +125,14 @@ function ReservationForm(){
                         onCellClick={(timestamp)=>onClickSelectDay(timestamp)}
                     />    
                 </div>
-                <div>
-                    <div>
+                <div className="right_contents">
+                    <div className="title">
                         <h1>{
                             `선택일 ${selectedYearAndMonth.year}년 ${selectedYearAndMonth.month}월 
                             ${toDate(selectedTimestamp, { timeZone: 'Asia/Seoul' }).getDate()}일`
                         }</h1>
                     </div>
-                    <div>
+                    <div className="contents">
                         <p><b>예약문의</b> 1544-6062</p>
                         <p><b>기타사항</b> 만 19세 미만은 보호자가 동반해야 예약이 가능합니다.</p>
                     </div>
@@ -228,7 +228,7 @@ function ReservationForm(){
                         <div className="title">
                             <h4>결제 금액 안내</h4>
                         </div>
-                        <div>
+                        <div className="contents">
                             <div>
                                 
                                 <p><b>최종결제금액: </b><span>{reservationPeriodList[selectedRoom]*roomTypeDataList[selectedRoom].basePrice}</span>원</p>
