@@ -35,14 +35,11 @@
   color: #bbbbbb;
 }
 
-/*//////////////////임시추가 로그아웃버튼색변경*/
 .logout-button {
   color: white;
+  transition: color 0.3s ease;
 }
-.logout-button:hover {
-  color: #bbbbbb;
-}
-/*/////////////////////*/
+
 
 /* h2{
   margin:20px 30px;
@@ -114,13 +111,15 @@
   /* height: 50px; */
   /* border: 1px solid #1283a2; */
 }
+.copyright_foot .copyright_leftWrap span,
 .copyright_foot .copyright_leftWrap span a {
   display: inline-block;
   font-size: 13px;
   margin-right: 16px;
   transition: color 0.3s ease;
 }
-.copyright_foot .copyright_leftWrap span a:hover {
+.copyright_foot .copyright_leftWrap span a:hover,
+.copyright_foot .copyright_leftWrap .logout-button:hover {
   color: #bbbbbb;
 }
 /* .admin, #Footer span {
