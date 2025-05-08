@@ -209,6 +209,11 @@
     cursor: pointer;
     position: relative;
     margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 .Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input:checked {
     background-color: #464646;
@@ -216,10 +221,8 @@
 .Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input:checked::after {
     content: "";
     position:absolute;
-    top: 4px;
-    left: 4px;
-    width: 8px;
-    height: 8px;
+    width: 60%;
+    height: 60%;
     background-color: #fff;
 }
 .Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-label {
