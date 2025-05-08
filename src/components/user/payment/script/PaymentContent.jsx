@@ -115,7 +115,9 @@ export default function PaymentContent() {
     <nav className="Payment_container">
       <ul className='Payment_list'>
         <li className="Payment_li">
-          <div>Payment</div>
+          <div className="title">
+            <h2>Payment</h2>
+          </div>
           <div id ="usersPaymentContent">
               <div id="container_payment" className="text-center">
                 <div>
