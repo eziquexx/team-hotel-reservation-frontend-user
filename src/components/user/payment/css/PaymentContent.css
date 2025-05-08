@@ -134,3 +134,69 @@
 .payment-modal {
   color: #000 !important;
 }
+
+/* 결제 성공 페이지 스타일 */
+.PaymentSuccess_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* 결제 완료 페이지 스타일 */
+.PaymentComp_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+.PaymentComp_container .PaymentComp_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 100px 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+.PaymentComp_container .PaymentComp_list .PaymentComp_li .title h3 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.PaymentComp_container .PaymentComp_list .PaymentComp_li .Payment_complete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.PaymentComp_container .PaymentComp_list .PaymentComp_li .Payment_complete p {
+  margin-top: 60px;
+  font-size: 24px;
+}
+.PaymentComp_container .PaymentComp_list .PaymentComp_li .Payment_complete button {
+  padding: 14px 24px;
+  margin-top: 80px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ef9e39;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.PaymentComp_container .PaymentComp_list .PaymentComp_li .Payment_complete button:hover {
+  background-color: #db8a27;
+}

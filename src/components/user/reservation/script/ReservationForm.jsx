@@ -114,31 +114,44 @@ function ReservationForm(){
     //     public Timestamp checkOut;
     //     public int totalAmount;
     // }
+
+    
     function onClickReservation(){
         const checkInTimestamp = selectedTimestamp;
         const checkOutTimestamp = toDate(selectedTimestamp, { timeZone: 'Asia/Seoul' });
         setDay(checkOutTimestamp, checkOutTimestamp.getDay() + reservationPeriodList[selectedRoom]);
-        const data = {
-            memberId : userInfo.memberId,
-            roomId : 3,
-            checkIn : checkInTimestamp,
-            checkOut : checkOutTimestamp.getTime(),
-            totalAmount : reservationPeriodList[selectedRoom]*roomTypeDataList[selectedRoom].basePrice
-        };
 
-        console.log(data);
-        const fetchReservation = async () => {
-            const res = await customFetch(`${env_API_BASE_URL}/api/users/reservation`,data,REST.POST);
+        // 25.05.09 지은 : [추가] memberId가 있는지 여부 확인. 즉, 로그인 했는지 안 했는지 확인 후 예약 진행.
+        if (userInfo !== null && userInfo.memberId !== null) {
+            // 25.05.09 지은 : [수정] memberId 키값에 사용자 memberId 저장.
+            const data = {
+                memberId : userInfo.memberId,
+                roomId : 3,
+                checkIn : checkInTimestamp,
+                checkOut : checkOutTimestamp.getTime(),
+                totalAmount : reservationPeriodList[selectedRoom]*roomTypeDataList[selectedRoom].basePrice
+            };
 
-            // if(res !== null){
-            //     console.log(res.message);
-            //     console.log(res.reservationId);
-            // }
+            console.log(data);
 
-            navi("/payment",{state:{key:{resReservationId : res.reservationId}}});
+            const fetchReservation = async () => {
+                
+                const res = await customFetch(`${env_API_BASE_URL}/api/users/reservation`,data,REST.POST);
+
+                // if(res !== null){
+                //     console.log(res.message);
+                //     console.log(res.reservationId);
+                // }
+
+                navi("/payment",{state:{key:{resReservationId : res.reservationId}}});
+                
+            }
+            
+            fetchReservation();
+
+        } else {
+            alert("로그인을 먼저 해주세요");
         }
-        
-        fetchReservation();
     }
 
     

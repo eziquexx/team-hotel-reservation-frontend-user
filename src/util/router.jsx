@@ -31,18 +31,20 @@ import SpecialBreakfast from "../components/user/special/script/SpecialBreakfast
 import CommunityQna from "../components/user/community/script/CommunityQna";
 import CommunityNotice from "../components/user/community/script/CommunityNotice";
 import UsersNoticeTable from "../components/user/community/script/UsersNoticeTable";
+import PaymentSuccess from "../components/user/payment/script/PaymentSuccess";
+import PaymentMain from "../components/user/payment/script/PaymentMain";
+import PaymentComplete from "../components/user/payment/script/PaymentComplete";
 
 export const RouterInfo = [
   
-   {
-    path: "/main",
-     element: <IntroSwiper />, // IntroSwiper 메인 풀페이지
-   },
+  {
+  path: "/main",
+    element: <IntroSwiper />, // IntroSwiper 메인 풀페이지
+  },
   {
     path: "/menu",
     element: <MenuLink />, // Header/Footer 없는 페이지
   },
-
   {
     path: "/",
     element: <UserPage />, //  경로에서 UserPage를 기본으로 렌더링
@@ -140,6 +142,16 @@ export const RouterInfo = [
       {
         path: "payment",
         element: <PaymentContent />,
+        children: [
+          {
+            path: "",
+            element: <PaymentMain />,
+          },
+          {
+            path:"complete",
+            element: <PaymentComplete />,
+          },
+        ]
       },
       {
         path: "users",
@@ -168,6 +180,10 @@ export const RouterInfo = [
         ],
       },
     ],
+  },
+  {
+    path: "payment/success",
+    element: <PaymentSuccess />
   },
 ];
 
