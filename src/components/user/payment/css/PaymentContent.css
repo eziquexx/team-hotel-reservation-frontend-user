@@ -130,3 +130,7 @@
   --bs-btn-active-bg: rgba(0,0,0,0.5);
   --bs-btn-active-border-color: #ffffff;
 }
+
+.payment-modal {
+  color: #000 !important;
+}
