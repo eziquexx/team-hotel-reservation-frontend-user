@@ -13,7 +13,8 @@ function ReservationForm(){
         selectedTimestamp, 
         setSelectedTimestamp // function
     } = useOutletContext();
-
+    // 25.05.08 지은 : 사용자 정보 상태 추가
+    const [userInfo, setUserInfo] = useState(null); 
     const [reservationPeriodList,setReservationPeriodList] = useState(new Array(roomTypeDataList.length));
 
     const [selectedRoom,setSelectedRoom] = useState(0);
@@ -26,6 +27,34 @@ function ReservationForm(){
     );
 
     const navi = useNavigate();
+
+
+    // 24.05.08 지은 : [추가] 로그인 사용자 정보 가져오기.
+    const fetchUserInfo = async () => {
+        try {
+        const response = await fetch(`${env_API_BASE_URL}/api/users/info`, {
+            method: "GET",
+            credentials: "include", // JWT 쿠키 전송
+        });
+        if (response.ok) {
+            const data = await response.json();
+            setUserInfo(data); // 상태 업데이트
+            return data; // 사용자 정보 반환
+        } else {
+            console.error("사용자 정보를 가져오지 못했습니다.");
+            return null;
+        }
+        } catch (error) {
+        console.error("오류 발생:", error);
+        return null;
+        }
+    };
+    // 컴포넌트 마운트 시 사용자 정보 가져오기
+    useEffect(() => {
+        fetchUserInfo();
+    }, []);
+
+    console.log("userInfo", userInfo);
 
     useEffect(()=>{
         const initList = [...reservationPeriodList];
@@ -90,7 +119,7 @@ function ReservationForm(){
         const checkOutTimestamp = toDate(selectedTimestamp, { timeZone: 'Asia/Seoul' });
         setDay(checkOutTimestamp, checkOutTimestamp.getDay() + reservationPeriodList[selectedRoom]);
         const data = {
-            memberId : 1,
+            memberId : userInfo.memberId,
             roomId : 3,
             checkIn : checkInTimestamp,
             checkOut : checkOutTimestamp.getTime(),
