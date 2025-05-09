@@ -54,6 +54,16 @@
 
 <br/>
 
+## ✅ 프로젝트 종료 이후 추가 개선 작업:
+- 사용자 페이지 전반의 UI 구성 정리 및 스타일 개선
+- 예약 페이지 기능 개선:
+  - 로그인한 사용자 정보를 예약 시 자동 반영되도록 구현
+  - 예약 완료 후 결제 페이지로 자연스럽게 연동되도록 처리
+- PayPal 결제 UX 개선:
+  - 팝업 결제 성공 시 3초 후 자동 종료 및 본창에서 결제 완료 페이지로 자동으로 이동 되도록 구현
+
+<br/>
+
 ## :computer: 개발 환경
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
