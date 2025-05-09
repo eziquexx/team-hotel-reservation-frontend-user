@@ -64,7 +64,7 @@ Hotel PMS 사용자 페이지입니다.<br>
 
 ## :clipboard: 기술 스택
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Bootstrap](https://img.shields.io/badge/React%20bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![React Bootstrap](https://img.shields.io/badge/React%20Bootstrap-%2339C4DD.svg?style=for-the-badge&logo=reactbootstrap&logoColor=white)
 ![Swiper](https://img.shields.io/badge/Swiper-%236332F6.svg?style=for-the-badge&logo=swiper&logoColor=white)
 ![date-fns](https://img.shields.io/badge/date--fns-%23770C56.svg?style=for-the-badge&logo=datefns&logoColor=white)
 - React: 프론트엔드 프레임워크
