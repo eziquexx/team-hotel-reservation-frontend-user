@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Team Project - Hotel PMS (User Page)
+이 레포지토리는 풀스택 개발 교육 과정 중 진행된 팀 프로젝트 **Hotel PMS**의 사용자 페이지(User Page) 전체 소스코드를 포함하고 있으며,  
+본인이 별도로 정리하여 업로드한 저장소입니다.
+<br><br>
+관리자 페이지(Admin Page) 및 비즈니스 로직(API)는 아래 별도 레포지토리에서 확인할 수 있습니다:<br><br>
+👉 [관리자 페이지 레포지토리 이동하기](https://github.com/eziquexx/jelee-hjhotel-front-admin) <br>
+👉 [api 레포지토리 이동하기](https://github.com/eziquexx/jelee-hjhotel-back-api)
+<br><br>
+:star: [JELEE Notion - Mini Project](https://honey-plant-22e.notion.site/dev-jelee-5686cfa35c1b4c859a27de25d5fad5dd?pvs=4)로 이동하면 해당 미니 프로젝트 또는 다른 프로젝트를 보실 수 있습니다. 또한 자세한 내용을 보실 수 있습니다. :star:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br/>
 
-## Available Scripts
+## 	:speech_balloon: 프로젝트 소개
+Hotel PMS 사용자 페이지입니다.<br>
+회원가입 및 로그인 후, 원하는 날짜에 원하는 객실을 선택해 예약하고, 결제까지 진행할 수 있는 사용자 기능을 구현했습니다.<br><br>
 
-In the project directory, you can run:
+※ 팀 프로젝트였으며 사용자 페이지는 여러 명이 함께 개발했습니다.<br>
+이 저장소에는 **본인이 맡은 작업 중심으로 정리**되어 있습니다.<br><br>
+> [!CAUTION]
+> 경고: 이 팀 프로젝트는 상업적인 용도가 아닙니다.
 
-### `npm start`
+<br/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :walking: 프로젝트 목적
+- 팀 협업 경험을 쌓고, 학원에서 배운 내용을 기반으로 취업 포트폴리오용 프로젝트를 완성하는 것이 목표였습니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br/>
 
-### `npm test`
+## :calendar: 개발 기간 (프로젝트 전체 일정)
+2024-11-11 ~ 2024-12-31
+- 11/11 ~ 11/12: 프로젝트 기획 및 주제 정하기, 요구사항 분석, 아이디어 선정, 데이터 수집
+- 11/13 ~ 11/13: DB 설계를 위한 속성 정의 및 호텔 관련 레퍼런스 조사
+- 11/14 ~ 11/15: 데이터 모델링 및 비즈니스 로직 구조 정리
+- 11/18 ~ 12/13: 각자 담당한 비즈니스 로직 구현 (API, 사용자/관리자 페이지 UI 개발 등)
+- 12/16 ~ 12/25: 기능 테스트, 버그 수정, 사용자 피드백 반영
+- 12/25 ~ 12/31: 최종 발표 준비 및 프로젝트 마무리
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
 
-### `npm run build`
+## 	:star: 팀원 (Programmers)
+- **JELEE** (팀장)
+- Kim YH
+- Lim SY
+- Ahn SJ
+- Gong HT
+- Kim JJ
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔧 주요 기여 (JELEE)
+- 결제 화면 UI 및 PayPal 연동
+- 공지사항 조회 UI 구성
+- 팀장 역할: Git 레포지토리 관리, 브랜치 통합(Merge), 일정 조율, 회의 진행
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br/>
 
-### `npm run eject`
+## :computer: 개발 환경
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+- Visual Studio Code
+- GitHub
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :clipboard: 기술 스택
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Bootstrap](https://img.shields.io/badge/React%20bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Swiper](https://img.shields.io/badge/Swiper-%236332F6.svg?style=for-the-badge&logo=swiper&logoColor=white)
+![date-fns](https://img.shields.io/badge/date--fns-%23770C56.svg?style=for-the-badge&logo=datefns&logoColor=white)
+- React: 프론트엔드 프레임워크
+- React Bootstrap: UI 컴포넌트 스타일링
+- Swiper: 메인 페이지의 이미지 슬라이더 구현
+- date-fns: 날짜 및 시간 처리 라이브러리
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## :gear: 주요 기능
+- 회원가입 및 로그인 (JWT 인증)
+- 객실 목록 및 상세 정보 조회
+- 객실 예약 현황 확인 및 예약 진행
+- 예약 결제 기능 (PayPal)
+- 공지사항 열람
 
-## Learn More
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## :label: 저작권 및 사용권 정보
+- 취업 포트폴리오용 팀 프로젝트이며 상업적이 용도가 아닙니다.
