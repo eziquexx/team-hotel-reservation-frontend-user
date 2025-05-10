@@ -3,9 +3,12 @@
 본인이 별도로 정리하여 업로드한 저장소입니다.
 <br><br>
 관리자 페이지(Admin Page) 및 비즈니스 로직(API)는 아래 별도 레포지토리에서 확인할 수 있습니다:<br><br>
+👉 [사용자 페이지 레포지토리 이동하기](https://github.com/eziquexx/jelee-hjhotel-front-user) <br>
 👉 [관리자 페이지 레포지토리 이동하기](https://github.com/eziquexx/jelee-hjhotel-front-admin) <br>
-👉 [api 레포지토리 이동하기](https://github.com/eziquexx/jelee-hjhotel-back-api)
-<br><br>
+👉 [비즈니스 로직 API 레포지토리 이동하기](https://github.com/eziquexx/jelee-hjhotel-back-api) <br>
+
+<br>
+
 :star: [JELEE Notion - Mini Project](https://honey-plant-22e.notion.site/dev-jelee-5686cfa35c1b4c859a27de25d5fad5dd?pvs=4)로 이동하면 해당 미니 프로젝트 또는 다른 프로젝트를 보실 수 있습니다. 또한 자세한 내용을 보실 수 있습니다. :star:
 
 <br/>
