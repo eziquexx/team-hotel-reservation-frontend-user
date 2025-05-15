@@ -2,44 +2,52 @@
 .Community_container{
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   width: 100%; 
 }
-.Community_list{
+.Community_container .Community_list {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 80%;
-  max-width: 800px;
-  padding: 20px;
-  gap: 30px; 
-  /* border: 3px solid #ccc; */
+  padding: 100px 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
-.Community_list li.Community_li{
-  position: absolute;
-  margin-top: 0;
-  height: 80px;
-  color: rgba(255,255,255,0.6);
-  font-size:50px;
+.Community_container .Community_list li {
   text-align: center;
-  transform: translateY(-215px);
-  /* border: 3px solid #4ce691; */
+  color: #ececec;
+}
+.Community_container .Community_list li h2 {
+  font-size: 48px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0 20px 8px;
+  border-bottom: 1px solid #fff;
+}
+.Community_container .Community_qna_list li p {
+  width: 100%;
+  margin-top: 30px;
+  font-size: 30px;
+  line-height: 2.2;
 }
 
 #usersCommunityContent {
   max-width: 1200px;
   min-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 60px;
-  /* border: 3px solid #f184ff; */
+  margin: 38px auto 0;
 }
-/* #usersCommunityContent .table-height-fixed {
-  margin-bottom: 10px;
-} */
 #usersCommunityContent .contentTable {
-  font-size: 11px;
+  font-size: 15px;
+  height: 440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 #usersCommunityContent .modal-item-text {
   margin-left: 6px;
@@ -49,10 +57,10 @@
   --bs-table-color: #ffffff;
   --bs-table-hover-color: #c0c0c0;
   border-color: #373737;
-  font-size: 11px;
+  font-size: 15px;
 }
 #usersCommunityContent .pagination {
-  font-size: 11px;
+  font-size: 15px;
   --bs-pagination-bg: rgba(0,0,0,0.5);
   --bs-pagination-border-color: #373737;
   --bs-pagination-focus-bg: rgba(59, 59, 59, 0.5);
@@ -85,8 +93,9 @@
 }
 
 #usersCommunityContent .detail-page .btn {
-  font-size: 11px;
+  font-size: 15px;
   padding: 9px 15px;
+  margin-top: 10px;
   --bs-btn-bg: rgba(0,0,0,0.5);
   --bs-btn-border-color: #373737;
   --bs-btn-hover-bg: rgba(0,0,0,0.5);
@@ -94,6 +103,5 @@
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: rgba(0,0,0,0.5);
   --bs-btn-active-border-color: #ffffff;
-  margin-top: -40px;
 }
 

@@ -85,90 +85,102 @@ const MemberRegister = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="register-form">
-            <h2>회원가입</h2>
+        <div className="Register_container">
+            <form onSubmit={handleSubmit} className="register-form">
+                <div className="title">
+                    <h2>회원 가입</h2>
+                    <p className="point"><span>*</span> 표시는 필수로 입력해야 합니다.</p>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                    {successMessage && <p className="success-message">{successMessage}</p>}
+                </div>
 
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
-            {successMessage && <p className="success-message">{successMessage}</p>}
+                <div className="contents">
+                    <div className="formGroup_wrap">
+                        <div className="form-group">
+                            <label htmlFor="userId">아이디 <span>*</span></label>
+                            <input
+                                type="text"
+                                id="userId"
+                                name="userId"
+                                placeholder="사용할 아이디를 입력하세요"
+                                value={formData.userId}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
 
-            <div className="form-group">
-                <label htmlFor="userId">아이디*</label>
-                <input
-                    type="text"
-                    id="userId"
-                    name="userId"
-                    placeholder="사용할 아이디를 입력하세요"
-                    value={formData.userId}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
+                        <div className="form-group">
+                            <label htmlFor="email">이메일 <span>*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="사용할 이메일을 입력하세요"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
 
-            <div className="form-group">
-                <label htmlFor="email">이메일*</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="사용할 이메일을 입력하세요"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
+                        <div className="form-group form-password">
+                            <label htmlFor="password">비밀번호 <span>*</span></label>
+                            <div className="input_group">
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="비밀번호를 입력하세요"
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="비밀번호를 다시 입력하세요"
+                                    value={formData.confirmPassword}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                        </div>
 
-            <div className="form-group">
-                <label htmlFor="password">비밀번호*</label>
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="비밀번호를 입력하세요"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    placeholder="비밀번호를 다시 입력하세요"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
+                        <div className="form-group">
+                            <label htmlFor="name">이름 <span>*</span></label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="이름을 입력하세요"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
 
-            <div className="form-group">
-                <label htmlFor="name">이름*</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="이름을 입력하세요"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-
-            <div className="form-group">
-                <label htmlFor="phone">연락처*</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="연락처를 입력하세요"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-
-            <button id="registerSubmit" type="submit" className="custom-button">
-                가입 완료
-            </button>
-        </form>
+                        <div className="form-group">
+                            <label htmlFor="phone">연락처 <span>*</span></label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="연락처를 입력하세요"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                    </div>
+                    
+                    <button id="registerSubmit" type="submit" className="custom-button">
+                        가입 완료
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+        
     );
 };
 

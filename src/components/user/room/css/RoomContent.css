@@ -1,35 +1,61 @@
-/* AboutContent.css */
-
-.RoomView_Top{
+/* RoomContent.css */
+.RoomView_container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%; 
+}
+.RoomView_container .RoomView_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    padding: 100px 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.RoomView_container .RoomView_list li {
+    text-align: center;
+    color: #ececec;
+} 
+.RoomView_container .RoomView_list li.title h2 {
+    font-size: 48px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0 20px 8px;
+    border-bottom: 1px solid #fff;
+}
+/* .RoomView_Top{
     padding-top: 160px;
-}
-
+} */
 .room_container{
-margin: 0 auto;
-width: 1200px;
-height: 100%;
-background-color: #fff2a9dc;
-border: 2px solid rgb(0, 0, 0); 
-
+    margin: 0 auto;
+    /* width: 1200px; */
+    /* height: 100%; */
+    /* background-color: #fff2a9dc; */
+    /* border: 2px solid rgb(0, 0, 0);  */
 }
-
 .room-header{margin: auto;}
-
 .room-header p{
-    width: 1200px;
     margin: auto;
-    font-size: small;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    font-size: 15px;
+    margin-top: 38px;
+    margin-bottom: 40px;
+    line-height: 2;
+    /* width: 1200px; */
+    /* margin-bottom: 70px; */
+    /* margin-top: 70px; */
 }
-
 .room-header h1{
  margin-bottom: 5px;
  border-bottom: 1px solid rgb(223, 221, 202);
  font-weight:lighter;
  padding: 10px;
 }
-
 .room-type-list{
     border-top: 1px solid rgb(223, 221, 202);
     padding-top: 50px;

@@ -1,100 +1,110 @@
+.Login_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%; 
+}
+
 /* 배경 이미지와 레이아웃 설정 */
-.login-page {
-    height: 50vh; /* 화면 전체 높이 */
+.Login_container .login-page {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 중앙 정렬 (수직) */
-    align-items: center; /* 중앙 정렬 (수평) */
-    background-color: rgba(255, 255, 255, 0.11);
-    color: rgba(255, 255, 255, 0.82);
-    background-size: cover; /* 화면에 꽉 차게 배경 이미지 적용 */
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative; /* 배경 이미지의 부모 요소 */
-    margin-bottom: 240px; /* 24.12.17 지은 : 임시로 추가*/
-    margin-top: 200px;/* 24.12.19 유화 추가: 상단 띄우기*/
-    /* border: 3px solid #7afabe; */
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 100px 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* 상단 로그인  */
-.login-page h1 {/* 24.12.19 유화 추가: 위치 위로 이동 */
-    position: relative;
-    top: -20px;
-    font-size: 40px;
-    /* border: 3px solid rgb(175, 250, 175); */
-}
-
-.login-page p {/* 24.12.19 유화 추가: 크기 간격 조정  */
-    font-size: 13px !important;
-    margin: 2px 0;
-    
-}
-/* 로그인 박스 스타일 */
-.login-container {
-    width: 400px; /* 로그인 창의 너비 */
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.6); /* 투명한 검정색 배경 */
-    border-radius: 10px; /* 테두리 둥글게 */
-    color: #fff; /* 텍스트 색상 */
+.Login_container .login-page .title  {
+    color: #fff;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    
+}
+.Login_container .login-page .title h1 {/* 24.12.19 유화 추가: 위치 위로 이동 */
+    position: relative;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.Login_container .login-page .title p {/* 24.12.19 유화 추가: 크기 간격 조정  */
+    font-size: 15px !important;
+    line-height: 1.4;
 }
 
-/* 제목 스타일 */
-.login-container h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #ffc06d;
+.Login_container .login-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin-top: 20px;
 }
 
 /* 입력 필드 스타일 */
-.login-form input {
+.Login_container .login-form input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 15px 14px;
+    font-size: 15px;
+    border: none;
     box-sizing: border-box;
+    border: 2px solid transparent;
+}
+.Login_container .login-form input:nth-child(1) {
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+}
+.Login_container .login-form input:nth-child(2) {
+    border-radius: 0 0 4px 4px;
+    border-top: 2px solid #d6d6d6;
 }
 
 /* 로그인 버튼 스타일 */
-.custom-login-button {
+.Login_container .login-form .custom-login-button {
     width: 100%;
-    background-color: #ffc06d; /* 버튼 색상 */
+    background-color: #EF9E39; /* 버튼 색상 */
     color: #fff;
-    border: none;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-size: 16px;
+    border: 2px solid #EF9E39;
+    box-sizing: border-box;
+    padding: 15px 0;
+    margin-top: 14px;
+    border-radius: 4px;
+    font-size: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-.custom-login-button:hover {
-    background-color: #ffaf41; /* 호버 시 버튼 색상 변경 */
+.Login_container .login-form .custom-login-button:hover {
+    background-color: #db8a27; /* 호버 시 버튼 색상 변경 */
+    border: 2px solid #db8a27;
 }
 
 /* 링크 스타일 */
-.login-options .btn-link {
+.Login_container .login-options {
+    color: #fff;
+    margin-top: 14px;
+}
+.Login_container .login-options .btn-link {
     background: none;
-    color: #ffc06d;
+    color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 12px;
-    margin: 15px;
-    /* border: 1px solid #ccc; */
+    font-size: 14px;
+    margin: 0 10px;
+    text-decoration: none;
 }
-
-.login-options .btn-link:hover {
-    text-decoration: underline;
+.Login_container .login-options .btn-link:hover {
+    color: #EF9E39;
 }
 
 /* 오류 메시지 스타일 */
 .error-message {
-    color: red;
+    color: #EF9E39;
     margin-bottom: 10px;
 }
 

@@ -45,48 +45,52 @@ function MemberLoginPage() {
     }, []); // 컴포넌트 마운트 시 한 번만 실행
 
     return (
-        <div className="login-page">
-            <h1>로그인</h1>
-            <p>잘바즈 회원은 가입 없이 이용할 수 있습니다.</p>
-            <p>//🫵🏼 당신은 아닙니다!!!!</p>
+        <div className="Login_container">
+            <div className="login-page">
+                <div className="title">
+                    <h1>로그인</h1>
+                    <p>* 회원 가입을 해야 예약을 할 수 있습니다.</p>
 
-            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+                    {errorMessage && <p style={{ color: '#EF9E39' }}>{errorMessage}</p>}
+                </div>
 
-            {/* 폼 태그로 감싸기 */}
-            <form onSubmit={handleLogin} className="login-form">
-                <input
-                    type="text"
-                    name="userId"
-                    placeholder="아이디를 입력하세요"
-                    value={formData.userId}
-                    onChange={handleChange}
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="비밀번호를 입력하세요"
-                    value={formData.password}
-                    onChange={handleChange}
-                />
-                <button
-                    id="login-button"
-                    type="submit" // 버튼 타입을 submit으로 설정
-                    className="custom-login-button"
-                >
-                    로그인
-                </button>
-            </form>
+                {/* 폼 태그로 감싸기 */}
+                <form onSubmit={handleLogin} className="login-form">
+                    <input
+                        type="text"
+                        name="userId"
+                        placeholder="아이디를 입력하세요"
+                        value={formData.userId}
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="비밀번호를 입력하세요"
+                        value={formData.password}
+                        onChange={handleChange}
+                    />
+                    <button
+                        id="login-button"
+                        type="submit" // 버튼 타입을 submit으로 설정
+                        className="custom-login-button"
+                    >
+                        로그인
+                    </button>
+                </form>
 
-            <div className="login-options">
-                <p>
-                    <button onClick={() => alert('아이디 찾기x')} className="btn-link">아이디 찾기</button>
-                    {' / '}
-                    <button onClick={() => alert('비번 찾기x')} className="btn-link">비밀번호 찾기</button>
-                    {' / '}
-                    <button onClick={() => navigate('/users/terms')} className="btn-link">회원가입</button>
-                </p>
+                <div className="login-options">
+                    <p>
+                        <button onClick={() => alert('기능 구현이 안되었습니다.')} className="btn-link">아이디 찾기</button>
+                        {' | '}
+                        <button onClick={() => alert('기능 구현이 안되었습니다.')} className="btn-link">비밀번호 찾기</button>
+                        {' | '}
+                        <button onClick={() => navigate('/users/terms')} className="btn-link">회원가입</button>
+                    </p>
+                </div>
             </div>
         </div>
+        
     );
 }
 

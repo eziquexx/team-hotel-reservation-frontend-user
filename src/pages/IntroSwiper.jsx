@@ -85,7 +85,7 @@ return (
     {/* 고정 콘텐츠 */}
     <div id="fixed_elements" style={{ zIndex: 1100 }}>
       <div className="intro_hotel_logo logo2">
-        <Link to="/reservation">StarellaHotel</Link>
+        <Link to="/main">StarellaHotel</Link>
       </div>
       <div className="intro_menu_link link2">
         <Link to="/menu">: Menu</Link>

@@ -51,66 +51,74 @@ function MemberTermsPage() {
     };
 
     return (
-        <div className="terms_page">
-            <h2>약관동의</h2>
-            <p> 회원 약관에 동의하셔야 회원가입을 진행할 수 있습니다.</p>
+        <div className="TermsPage_container">
+            <div className="terms_page">
+                <div className="title">
+                    <h2>약관동의</h2>
+                    <p> 회원 약관에 동의하셔야 회원가입을 진행할 수 있습니다.</p>
+                </div>
+                
+                <div className="contents">
+                    <div className="checkbox_group">
+                        <div className="terms_checkbox">
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="all"
+                                    checked={terms.all}
+                                    onChange={handleCheckboxChange}
+                                />
+                                모두 동의합니다
+                            </label>
+                        </div>
 
-            <div className="terms_checkbox">
-                <label>
-                    <input
-                        type="checkbox"
-                        name="all"
-                        checked={terms.all}
-                        onChange={handleCheckboxChange}
-                    />
-                    모두 동의합니다
-                </label>
-            </div>
+                        <div className="terms_checkbox">
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="service"
+                                    checked={terms.service}
+                                    onChange={handleCheckboxChange}
+                                />
+                                서비스 이용 약관 동의 (필수)
+                            </label>
+                        </div>
 
-            <div className="terms_checkbox">
-                <label>
-                    <input
-                        type="checkbox"
-                        name="service"
-                        checked={terms.service}
-                        onChange={handleCheckboxChange}
-                    />
-                    서비스 이용 약관 동의 (필수)
-                </label>
-            </div>
+                        <div className="terms_checkbox">
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="privacy"
+                                    checked={terms.privacy}
+                                    onChange={handleCheckboxChange}
+                                />
+                                개인정보 수집 및 이용 동의 (필수)
+                            </label>
+                        </div>
 
-            <div className="terms_checkbox">
-                <label>
-                    <input
-                        type="checkbox"
-                        name="privacy"
-                        checked={terms.privacy}
-                        onChange={handleCheckboxChange}
-                    />
-                    개인정보 수집 및 이용 동의 (필수)
-                </label>
-            </div>
-
-            <div className="terms_checkbox">
-                <label>
-                    <input
-                        type="checkbox"
-                        name="marketing"
-                        checked={terms.marketing}
-                        onChange={handleCheckboxChange}
-                    />
-                    마케팅 정보 수신 동의 (선택)
-                </label>
-            </div>
-
-            <ButtonEx
-                id="terms_agree_button"
-                action={handleNext} // 필수 약관 확인 후 이동
-                disabled={!isAllChecked} // 필수 약관에 모두 동의해야 버튼 활성화
-            >
-                다음
-            </ButtonEx>
-        </div>
+                        <div className="terms_checkbox">
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="marketing"
+                                    checked={terms.marketing}
+                                    onChange={handleCheckboxChange}
+                                />
+                                마케팅 정보 수신 동의 (선택)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <ButtonEx
+                        id="terms_agree_button"
+                        action={handleNext} // 필수 약관 확인 후 이동
+                        disabled={!isAllChecked} // 필수 약관에 모두 동의해야 버튼 활성화
+                    >
+                        다음
+                    </ButtonEx>
+                </div> {/* contents end */}
+            </div> {/* terms_page end */}
+        </div> /* terms_page end */
     );
 }
 

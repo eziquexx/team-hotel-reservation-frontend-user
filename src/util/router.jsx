@@ -25,23 +25,34 @@ import MemberRegister from "../components/user/member/script/MemberRegister";
 import MemberLoginPage from "../components/user/member/script/MemberLoginPage";
 import MemberSignUp from "../components/user/member/script/MemberSignUp";
 import MemberSignUpComplete from "../components/user/member/script/MemberSignUpComplete";
+import SpecialSpecial from "../components/user/special/script/SpecialSpecial";
+import SpecialEvent from "../components/user/special/script/SpecialEvent";
+import SpecialBreakfast from "../components/user/special/script/SpecialBreakfast";
+import CommunityQna from "../components/user/community/script/CommunityQna";
+import CommunityNotice from "../components/user/community/script/CommunityNotice";
+import UsersNoticeTable from "../components/user/community/script/UsersNoticeTable";
+import PaymentSuccess from "../components/user/payment/script/PaymentSuccess";
+import PaymentMain from "../components/user/payment/script/PaymentMain";
+import PaymentComplete from "../components/user/payment/script/PaymentComplete";
 
 export const RouterInfo = [
   
-   {
-    path: "/main",
-     element: <IntroSwiper />, // IntroSwiper 메인 풀페이지
-   },
+  {
+  path: "/main",
+    element: <IntroSwiper />, // IntroSwiper 메인 풀페이지
+  },
   {
     path: "/menu",
     element: <MenuLink />, // Header/Footer 없는 페이지
   },
-
   {
     path: "/",
     element: <UserPage />, //  경로에서 UserPage를 기본으로 렌더링
     children: [
-     
+      {
+        path: "/",
+        element: <AboutContent />,
+      },
       {
         path: "about",
         element: <AboutContent />,
@@ -57,6 +68,20 @@ export const RouterInfo = [
       {
         path: "special",
         element: <SpecialContent />,
+        children: [
+          {
+            path: "",
+            element: <SpecialSpecial />,
+          },
+          {
+            path: "event",
+            element: <SpecialEvent />,
+          },
+          {
+            path: "breakfast",
+            element: <SpecialBreakfast />,
+          }
+        ]
       },
       {
         path: "reservation",
@@ -96,17 +121,37 @@ export const RouterInfo = [
         children: [
           {
             path: "notice",
-            element: <UsersNoticeList />,
+            element: <CommunityNotice />,
+            children: [
+              {
+                path: "",
+                element: <UsersNoticeList />,
+              },
+              {
+                path: ":noticeId",
+                element: <UsersNoticeDetailPage />
+              }
+            ]
           },
           {
-            path: "notice/:noticeId",
-            element: <UsersNoticeDetailPage />
-          },
+            path: "qna",
+            element: <CommunityQna />
+          }
         ]
       },
       {
         path: "payment",
         element: <PaymentContent />,
+        children: [
+          {
+            path: "",
+            element: <PaymentMain />,
+          },
+          {
+            path:"complete",
+            element: <PaymentComplete />,
+          },
+        ]
       },
       {
         path: "users",
@@ -135,6 +180,10 @@ export const RouterInfo = [
         ],
       },
     ],
+  },
+  {
+    path: "payment/success",
+    element: <PaymentSuccess />
   },
 ];
 

@@ -109,9 +109,9 @@ function InnerSwiperSlider() {
         <h2>{innerSlidesData[activeIndex].title}</h2>
         <p>{innerSlidesData[activeIndex].description}</p>
         <ul>
-          <li>Type : {innerSlidesData[activeIndex].type}</li>
-          <li>Capacity : {innerSlidesData[activeIndex].capacity}</li>
-          <li>Roomarea : {innerSlidesData[activeIndex].area}</li>
+          <li>- Type : {innerSlidesData[activeIndex].type}</li>
+          <li>- Capacity : {innerSlidesData[activeIndex].capacity}</li>
+          <li>- Roomarea : {innerSlidesData[activeIndex].area}</li>
         </ul>
         <Link to ='/room'>
         <button className="learn_more_btn">Learn More</button>

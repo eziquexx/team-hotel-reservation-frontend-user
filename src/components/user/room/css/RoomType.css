@@ -13,10 +13,11 @@ body {
 
 /* RoomContent 영역 */
 .room-content {
-    max-width: 1400px;
-    margin: 0 auto 240px;
-    padding: 20px;
-    background-color: #fff;
+    padding: 0 40px;
+    /* max-width: 1400px; */
+    /* margin: 0 auto 240px; */
+    /* padding: 20px; */
+    /* background-color: #fff; */
 }
 
 .room-content h1 {
@@ -30,7 +31,8 @@ body {
 .room-type-list {
     display: flex;
     flex-wrap: wrap; /* 자동 줄바꿈 */
-    gap: 20px; /* 카드 간 간격 */
+    gap: 40px; /* 카드 간 간격 */
+    /* gap: 20px; 카드 간 간격 */
     justify-content: space-between; /* 가로 정렬 */
 }
 
@@ -72,11 +74,11 @@ body {
 }
 
 /* 객실 정보 */
-.room-info {
+/* .room-info {
     padding: 15px 20px;
-    text-align: left;
-    border-top: 1px solid #ececec; /* 구분선 */
-}
+    text-align: center;
+    border-top: 1px solid #ececec; 
+} */
 
 .room-name {
     width: 100%;
@@ -114,11 +116,10 @@ body {
 
 /* 디테일 텍스트 */
 .room-occupancy {
-    width: 200px;
     font-size: 1rem;
     color: #4f5555;
     margin: auto;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 /* 반응형 스타일 */

@@ -20,14 +20,14 @@ const Header = () => {
       <div className="header_menu_navbar">
 
         <ul className="nav_item">
-          About
+          <Link to="/about">About</Link>
           <li className="dropdown">
             <Link to="/about">About</Link>
           </li>
         </ul>
 
         <ul className="nav_item">
-          Roomview
+          <Link to="/room">Roomview</Link>
           <li className="dropdown">
             <Link to="/room/스탠다드">Standard</Link>
           </li>
@@ -46,7 +46,7 @@ const Header = () => {
         </ul>
 
         <ul className="nav_item">
-          Reservation
+        <Link to="/reservation/guide">Reservation</Link>
           <li className="dropdown">
             <Link to="/reservation/guide">Reservation Info</Link>
           </li>
@@ -56,31 +56,31 @@ const Header = () => {
         </ul>
 
         <ul className="nav_item">
-          Special
+          <Link to="/special">Special</Link>
           <li className="dropdown">
             <Link to="/special">Special</Link>
           </li>
           <li className="dropdown">
-            <Link to="/special">Event</Link>
+            <Link to="/special/event">Event</Link>
           </li>
           <li className="dropdown">
-            <Link to="/special">BlackFirst</Link>
+            <Link to="/special/breakfast">Breakfast</Link>
           </li>
         </ul>
 
         <ul className="nav_item">
-          Community
+          <Link to="/community/notice">Community</Link>
           <li className="dropdown">
             <Link to="/community/notice">Notice</Link>
           </li>
           <li className="dropdown">
-            <Link to="/community">Q&A</Link>
+            <Link to="/community/qna">Q&A</Link>
           </li>
         </ul>
       </div>
-      <div className="header_item_menu">
+      {/* <div className="header_item_menu">
         <Link to="/menu"> :Menu</Link>
-      </div>
+      </div> */}
     </div>
   );
 };

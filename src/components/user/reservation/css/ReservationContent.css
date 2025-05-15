@@ -1,30 +1,97 @@
 /* ReservationContent.css */
-#rservationContent{
-    padding-top: 50px;
-    padding-bottom: 220px;
-    background-color: rgba(0,0,0,0.5);
-    width: 50% !important; /* 테이블 너비를 현재의 70%로 설정 */
-    margin: 0 auto; /* 테이블 가운데 정렬 */
-    border-collapse: collapse; /* 경계선 축소 */
+.Reservation_container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%; 
+}
+.Reservation_container #rservationContent {
+    width: 80%;
+    padding: 100px 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    /* border-collapse: collapse;  */
+}
+.Reservation_container #rservationContent div.title {
+    text-align: center;
+    color: #ececec;
+}
+.Reservation_container #rservationContent div.title h1,
+.Reservation_container #rservationContent .text-container .row h1 {
+    font-size: 48px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0 20px 8px;
+    border-bottom: 1px solid #fff;
+}
+.Reservation_container #rservationContent .container {
+    padding: 0 !important;
+}
+.Reservation_container #rservationContent .text-container .row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.Reservation_container #rservationContent .text-container .row button {
+    color: #fff;
+}
+.Reservation_container #rservationContent .text-container .row button:hover {
+    color: #bbb;
+}
+.Reservation_container #rservationContent .text-container .calrow {
+    margin-top: 38px;
+}
+.Reservation_container #rservationContent .text-container .calrow .border-secondary {
+    line-height: 1.6;
+    padding: 10px 14px 12px;
+}
+.Reservation_container #rservationContent .text-container .calrow .border-secondary #cell:hover {
+    color: #fff;
+    cursor: pointer;
+}
+.Reservation_container #rservationContent .text-container .calrow .border-secondary #cell > p {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #dddddd;
+}
+.Reservation_container #rservationContent div.contentsWrap {
+    margin-top: 38px;
+}
+.Reservation_container #rservationContent div.contentsWrap .container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 17px 20px !important;
+}
+.Reservation_container #rservationContent div.contentsWrap .container p {
+    padding: 0 !important;
+    font-size: 15px;
 }
 
 #rservationContent #guideTable{
     --bs-table-bg: rgba(0,0,0,0.5);
     --bs-table-color: rgba(255,255,255,0.7);
-    
+    margin-bottom: 0;
+    font-size: 15px;
 }
 
 #guideTable th,
 #guideTable td {
   letter-spacing: 1px;
-  padding: 1px;
+  padding: 4px 0;
   text-align: center;
+  vertical-align: middle;
 }
 #guideTable thead{
     font-weight: bold;
 }
 .container {
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 2;
     --bs-table-color: rgba(255,255,255,0.5);
     color:rgba(255,255,255,0.7);
     /* border: 2px solid #6df568cc; */
@@ -34,10 +101,240 @@
 }
 
 #sample_title{
-    /* border: 2px solid #f4f76bcc; */
- font-weight: bold;
+    font-weight: bold;
+    font-size: 17px !important;
 }
 .text-center {
     color:rgba(255,255,255,0.9);
-   
+}
+
+.Reservation_container #rservationContent .text-container .formrow {
+    margin-top: 38px;
+}
+.Reservation_container #rservationContent .text-container .formrow h1 {
+    font-size: 26px;
+    padding: 0;
+    border: 0;
+}
+.Reservation_container #rservationContent .text-container .formrow .right_contents .title {
+    text-align: left;
+}
+.Reservation_container #rservationContent .text-container .formrow .right_contents .contents {
+    font-size: 15px;
+    margin-top: 12px;
+}
+.Reservation_container #rservationContent .text-container .formrow .calrow {
+    margin-top: 0;
+    text-align: center;
+}
+.Reservation_container #rservationContent .text-container .formrow .calrow div.border-secondary #cell p:hover  {
+    color: #fffd81;
+    font-weight: bold;
+    cursor: pointer;
+}
+.Reservation_container #rservationContent .text-container .formrow > div:nth-child(1) {
+    padding: 0 ;
+}
+.Reservation_container #rservationContent .text-container .formrow > div:nth-child(2) {
+    padding: 0 ;
+    margin-top: 30px;
+    padding-left: 40px;
+}
+
+.Reservation_container #rservationContent .text-container .possible_room {
+    margin-top: 70px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .title h4 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.Reservation_container #rservationContent .text-container .possible_room .title h4 > span {
+    font-size: 16px;
+    margin-top: 14px;
+    font-weight: normal;
+}
+
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents {
+    padding: 30px 50px !important;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .left_contents {
+    padding: 0;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .left_contents .title {
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .left_contents .select_contents .col {
+    padding: 0;
+    margin-right: 20px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents {
+    width: 33.33333333%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right !important;
+    align-items: center;
+    padding: 0;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .price_contents {
+    width: auto;
+    padding: 0;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents {
+    width: auto;
+    padding: 0;
+    margin-left: 50px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input:checked {
+    background-color: #464646;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-input:checked::after {
+    content: "";
+    position:absolute;
+    width: 60%;
+    height: 60%;
+    background-color: #fff;
+}
+.Reservation_container #rservationContent .text-container .possible_room .choose_room .choose_room_contents_group .contents .right_contents .select_contents .form-check-label {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 70px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 40%;
+    margin-right: 60px !important;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .title {
+    width: auto;
+    padding: 0;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .title > h4 {
+    text-align: center;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .col {
+    padding: 0;
+    width: 100%;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .col > input {
+    width: 100%;
+    padding: 6px 10px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .col input:nth-child(1) {
+    margin-bottom: 6px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 16px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span > label {
+    margin-right: 10px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span > input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span > input:checked {
+    background-color: #464646;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .guest_info .contents .row .agree_check span > input:checked::after {
+    content: "";
+    position:absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+}
+
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .payments_info {
+    width: 40%;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .payments_info .contents {
+    font-size: 15px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .guest_payments_group .payments_info .title > h4 {
+    text-align: center;
+}
+
+.Reservation_container #rservationContent .text-container .possible_room .button_group {
+    margin-top: 70px;
+}
+.Reservation_container #rservationContent .text-container .possible_room .button_group .row .button {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    background-color: #fff !important;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.Reservation_container #rservationContent .text-container .possible_room .button_group .row .button:hover {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: #fff;
 }

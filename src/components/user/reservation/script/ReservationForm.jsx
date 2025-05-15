@@ -13,7 +13,8 @@ function ReservationForm(){
         selectedTimestamp, 
         setSelectedTimestamp // function
     } = useOutletContext();
-
+    // 25.05.08 지은 : 사용자 정보 상태 추가
+    const [userInfo, setUserInfo] = useState(null); 
     const [reservationPeriodList,setReservationPeriodList] = useState(new Array(roomTypeDataList.length));
 
     const [selectedRoom,setSelectedRoom] = useState(0);
@@ -26,6 +27,34 @@ function ReservationForm(){
     );
 
     const navi = useNavigate();
+
+
+    // 24.05.08 지은 : [추가] 로그인 사용자 정보 가져오기.
+    const fetchUserInfo = async () => {
+        try {
+        const response = await fetch(`${env_API_BASE_URL}/api/users/info`, {
+            method: "GET",
+            credentials: "include", // JWT 쿠키 전송
+        });
+        if (response.ok) {
+            const data = await response.json();
+            setUserInfo(data); // 상태 업데이트
+            return data; // 사용자 정보 반환
+        } else {
+            console.error("사용자 정보를 가져오지 못했습니다.");
+            return null;
+        }
+        } catch (error) {
+        console.error("오류 발생:", error);
+        return null;
+        }
+    };
+    // 컴포넌트 마운트 시 사용자 정보 가져오기
+    useEffect(() => {
+        fetchUserInfo();
+    }, []);
+
+    console.log("userInfo", userInfo);
 
     useEffect(()=>{
         const initList = [...reservationPeriodList];
@@ -85,39 +114,52 @@ function ReservationForm(){
     //     public Timestamp checkOut;
     //     public int totalAmount;
     // }
+
+    
     function onClickReservation(){
         const checkInTimestamp = selectedTimestamp;
         const checkOutTimestamp = toDate(selectedTimestamp, { timeZone: 'Asia/Seoul' });
         setDay(checkOutTimestamp, checkOutTimestamp.getDay() + reservationPeriodList[selectedRoom]);
-        const data = {
-            memberId : 1,
-            roomId : 3,
-            checkIn : checkInTimestamp,
-            checkOut : checkOutTimestamp.getTime(),
-            totalAmount : reservationPeriodList[selectedRoom]*roomTypeDataList[selectedRoom].basePrice
-        };
 
-        console.log(data);
-        const fetchReservation = async () => {
-            const res = await customFetch(`${env_API_BASE_URL}/api/users/reservation`,data,REST.POST);
+        // 25.05.09 지은 : [추가] memberId가 있는지 여부 확인. 즉, 로그인 했는지 안 했는지 확인 후 예약 진행.
+        if (userInfo !== null && userInfo.memberId !== null) {
+            // 25.05.09 지은 : [수정] memberId 키값에 사용자 memberId 저장.
+            const data = {
+                memberId : userInfo.memberId,
+                roomId : 3,
+                checkIn : checkInTimestamp,
+                checkOut : checkOutTimestamp.getTime(),
+                totalAmount : reservationPeriodList[selectedRoom]*roomTypeDataList[selectedRoom].basePrice
+            };
 
-            // if(res !== null){
-            //     console.log(res.message);
-            //     console.log(res.reservationId);
-            // }
+            console.log(data);
 
-            navi("/payment",{state:{key:{resReservationId : res.reservationId}}});
+            const fetchReservation = async () => {
+                
+                const res = await customFetch(`${env_API_BASE_URL}/api/users/reservation`,data,REST.POST);
+
+                // if(res !== null){
+                //     console.log(res.message);
+                //     console.log(res.reservationId);
+                // }
+
+                navi("/payment",{state:{key:{resReservationId : res.reservationId}}});
+                
+            }
+            
+            fetchReservation();
+
+        } else {
+            alert("로그인을 먼저 해주세요");
         }
-        
-        fetchReservation();
     }
 
     
     return(
         <>
             {/* 미니 달력 / 선택한 날짜 */}
-            <div className="row row-cols-2">
-                <div>
+            <div className="row row-cols-2 formrow">
+                <div className="left_contents">
                     <CustomCalendar
                         year={selectedYearAndMonth.year} 
                         month={selectedYearAndMonth.month-1} 
@@ -125,31 +167,33 @@ function ReservationForm(){
                         onCellClick={(timestamp)=>onClickSelectDay(timestamp)}
                     />    
                 </div>
-                <div>
-                    <div>
+                <div className="right_contents">
+                    <div className="title">
                         <h1>{
                             `선택일 ${selectedYearAndMonth.year}년 ${selectedYearAndMonth.month}월 
                             ${toDate(selectedTimestamp, { timeZone: 'Asia/Seoul' }).getDate()}일`
                         }</h1>
                     </div>
-                    <div>
+                    <div className="contents">
                         <p><b>예약문의</b> 1544-6062</p>
                         <p><b>기타사항</b> 만 19세 미만은 보호자가 동반해야 예약이 가능합니다.</p>
                     </div>
                 </div>               
             </div>
             
-            <div>
+            <div className="possible_room">
                 {/* 객실 선택 */}
-                <div>
-                    <div><h4>객실선택<span>현재 예약 가능한 객실 입니다.</span></h4></div>
-                    <div>
+                <div className="choose_room">
+                    <div className="title">
+                        <h4>객실선택<span>현재 예약 가능한 객실 입니다.</span></h4>
+                    </div>
+                    <div className="choose_room_contents_group">
                         {roomTypeDataList.map((item,index)=>(
-                                <div className="p-3 m-2 row border" key={index}>
-                                    <div className="col-8">
-                                        <div>{`${item.name} / ${item.description}`}</div>
+                                <div className="p-3 m-2 row border contents" key={index}>
+                                    <div className="col-8 left_contents">
+                                        <div className="title">{`${item.name} / ${item.description}`}</div>
                                     
-                                        <div className="row">
+                                        <div className="row select_contents">
                                             <div className="col">
                                                 <div className="input-group mb-3">
                                                     <label className="input-group-text" for="reserve_period_select">숙박기간</label>
@@ -176,15 +220,15 @@ function ReservationForm(){
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-4 row justify-content-center">
-                                        <div className="col-4">
+                                    <div className="col-4 row justify-content-center right_contents">
+                                        <div className="col-4 price_contents">
                                             <p>결제금액</p>
                                             <h2>{reservationPeriodList[index]*item.basePrice}</h2>
                                         </div>
-                                        <div className="col-4">
+                                        <div className="col-4 select_contents">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="select_room" id="selectRoom" value={index} checked={selectedRoom === index} onChange={()=>onCheckedRoom(index)}/>   
-                                                <label class="form-check-label" htmlFor="selectRoom">
+                                                <input class="form-check-input" type="radio" name="select_room" id={index} value={index} checked={selectedRoom === index} onChange={()=>onCheckedRoom(index)}/>   
+                                                <label class="form-check-label" htmlFor={index}>
                                                    선택
                                                 </label>
                                             </div>
@@ -196,10 +240,12 @@ function ReservationForm(){
                     </div>
                 </div>
                 {/* 예약자 정보입력 / 총 결제금액 안내 */}
-                <div className="row row-cols-2">
-                    <div>
-                        <h4>예약자 정보입력</h4>
-                        <div>
+                <div className="guest_payments_group">
+                    <div className="row row-cols-2 guest_info">
+                        <div className="title">
+                            <h4>예약자 정보 입력</h4>
+                        </div>
+                        <div className="contents">
                             <div className="row row-cols-2">
                                 <div className="col">
                                     <input type="text" name="wr_name" required placeholder="예약자의 이름을 입력해주세요."/>
@@ -210,7 +256,7 @@ function ReservationForm(){
                                 <div className="col">
                                     {/* 뭘넣지...? */}
                                 </div>
-                                <div className="col">
+                                <div className="col agree_check">
                                     <Link to="">환불규정 및 약관</Link>
                                     <span>
                                         <label htmlFor="all_agr">전체 동의</label>
@@ -220,34 +266,37 @@ function ReservationForm(){
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h4>결제금액 안내</h4>
-                        <div>
+                    <div className="payments_info">
+                        <div className="title">
+                            <h4>결제 금액 안내</h4>
+                        </div>
+                        <div className="contents">
                             <div>
-                                최종결제금액
-                                <p><span>{reservationPeriodList[selectedRoom]*roomTypeDataList[selectedRoom].basePrice}</span>원</p>
+                                
+                                <p><b>최종결제금액: </b><span>{reservationPeriodList[selectedRoom]*roomTypeDataList[selectedRoom].basePrice}</span>원</p>
                             </div>
                             <div>
-                                <p><b>예약문의</b>{`    1544-6062`}</p>
-                                <p><b>결제기한</b>{`    예약 후 24시간 이내 (${setDay(
+                                <p><b>예약문의: </b>{`    1544-6062`}</p>
+                                <p><b>결제기한: </b>{`    예약 후 24시간 이내 (${setDay(
                                                     toDate(selectedTimestamp, { timeZone: 'Asia/Seoul' }), 
                                                     toDate(selectedTimestamp, { timeZone: 'Asia/Seoul' }).getDay() + 1)}까지)`
                                                 }
                                 </p>
                                 <p>
-                                    결제 기한 내 결제확인 되지 않으면 예약이 자동 취소됩니다. <br />
-                                    결제확인 되면 예약완료 문자가 휴대폰으로 전송됩니다. <br />
-                                    결제하실 때 예약자명으로 결제하셔야 빠른 확인이 가능합니다.
+                                    * 결제 기한 내 결제확인 되지 않으면 예약이 자동 취소됩니다. <br />
+                                    * 결제확인 되면 예약완료 문자가 휴대폰으로 전송됩니다. <br />
+                                    * 결제하실 때 예약자명으로 결제하셔야 빠른 확인이 가능합니다.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 {/* 취소 / 예약하기 버튼 */}
-                <div className="container px-5">
+                <div className="container px-5 button_group">
                     <div className="row gx-5 justify-content-center">
-                        <Link to="/reservation/check_out" className="col-2 p-3 m-3 btn bg-light border">취소</Link>
-                        <div className="col-2 p-3 m-3 btn bg-light border" onClick={onClickReservation}>예약하기</div>
+                        <Link to="/reservation/check_out" className="col-2 p-3 m-3 btn bg-light border button">취소</Link>
+                        <div className="col-2 p-3 m-3 btn bg-light border button" onClick={onClickReservation}>예약하기</div>
                     </div>
                 </div>
             </div>
