@@ -9,7 +9,7 @@
 
 <br>
 
-:star: [JELEE Notion - Mini Project](https://dev-jelee.notion.site/dev-jelee-5686cfa35c1b4c859a27de25d5fad5dd?pvs=4)로 이동하면 해당 프로젝트 또는 다른 프로젝트를 보실 수 있습니다. 또한 자세한 내용을 보실 수 있습니다. :star:
+:star: [JELEE Notion (Click!)](https://dev-jelee.notion.site/dev-jelee-5686cfa35c1b4c859a27de25d5fad5dd?pvs=4) 로 이동하면 해당 프로젝트 또는 다른 프로젝트의 내용과 저의 이력서를 볼 수 있습니다. :star:
 
 <br/>
 
